@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(anaform));
+            notifyIcon1 = new NotifyIcon(components);
             SuspendLayout();
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "FastenPOS";
+            notifyIcon1.Visible = true;
             // 
             // anaform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(840, 428);
+            ClientSize = new Size(846, 383);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "anaform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FastenPOS";
             WindowState = FormWindowState.Maximized;
+            FormClosing += anaform_FormClosing;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private NotifyIcon notifyIcon1;
     }
 }

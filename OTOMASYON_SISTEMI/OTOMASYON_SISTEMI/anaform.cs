@@ -16,5 +16,10 @@ namespace OTOMASYON_SISTEMI
         {
             InitializeComponent();
         }
+
+        private void anaform_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

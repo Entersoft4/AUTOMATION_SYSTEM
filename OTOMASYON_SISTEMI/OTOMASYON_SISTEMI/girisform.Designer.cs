@@ -32,6 +32,8 @@
             girisbtn = new Button();
             label1 = new Label();
             label2 = new Label();
+            giristbox = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // girisbtn
@@ -73,13 +75,36 @@
             label2.TabIndex = 2;
             label2.Text = "HOŞGELDİNİZ";
             // 
+            // giristbox
+            // 
+            giristbox.Anchor = AnchorStyles.None;
+            giristbox.Location = new Point(281, 235);
+            giristbox.Name = "giristbox";
+            giristbox.PasswordChar = '*';
+            giristbox.Size = new Size(184, 23);
+            giristbox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Verdana", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label3.Location = new Point(232, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(275, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Giriş yapmak için şifreyi giriniz";
+            // 
             // girisform
             // 
+            AcceptButton = girisbtn;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_image_for_FPOS;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(744, 418);
+            Controls.Add(label3);
+            Controls.Add(giristbox);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(girisbtn);
@@ -98,5 +123,7 @@
         private Button girisbtn;
         private Label label1;
         private Label label2;
+        private TextBox giristbox;
+        private Label label3;
     }
 }
