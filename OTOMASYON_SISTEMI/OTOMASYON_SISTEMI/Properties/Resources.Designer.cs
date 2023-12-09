@@ -69,5 +69,55 @@ namespace OTOMASYON_SISTEMI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_beyaz_256_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("F_beyaz_256-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_beyaz_500_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("F_beyaz_500-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FPOS_beyaz_112_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("FPOS_beyaz_112-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FPOS_beyaz_500_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("FPOS_beyaz_500-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FPOS_mavi_112_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("FPOS_mavi_112-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

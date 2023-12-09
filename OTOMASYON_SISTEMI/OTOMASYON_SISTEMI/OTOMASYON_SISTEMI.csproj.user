@@ -4,6 +4,30 @@
     <Compile Update="anaform.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\ayarlarform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\duzenleform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\kasaform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\menuform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\raporform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\satisform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\siparisform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\stokform.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="girisform.cs">
       <SubType>Form</SubType>
     </Compile>
