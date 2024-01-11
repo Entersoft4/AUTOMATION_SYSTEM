@@ -74,6 +74,7 @@
             kasabtn.TabIndex = 5;
             kasabtn.Text = "K A S A\r\nD U R U M U";
             kasabtn.UseVisualStyleBackColor = false;
+            kasabtn.Click += kasabtn_Click;
             // 
             // stokbtn
             // 
@@ -90,6 +91,7 @@
             stokbtn.TabIndex = 4;
             stokbtn.Text = "S T O K\r\nD U R U M U";
             stokbtn.UseVisualStyleBackColor = false;
+            stokbtn.Click += stokbtn_Click;
             // 
             // raporbtn
             // 
@@ -106,6 +108,7 @@
             raporbtn.TabIndex = 3;
             raporbtn.Text = "R A P O R L A R";
             raporbtn.UseVisualStyleBackColor = false;
+            raporbtn.Click += raporbtn_Click;
             // 
             // siparisbtn
             // 
@@ -122,6 +125,7 @@
             siparisbtn.TabIndex = 2;
             siparisbtn.Text = "S İ P A R İ Ş L E R";
             siparisbtn.UseVisualStyleBackColor = false;
+            siparisbtn.Click += siparisbtn_Click;
             // 
             // satisbtn
             // 
@@ -138,6 +142,7 @@
             satisbtn.TabIndex = 1;
             satisbtn.Text = "S A T I Ş";
             satisbtn.UseVisualStyleBackColor = false;
+            satisbtn.Click += satisbtn_Click;
             // 
             // duzenlebtn
             // 
@@ -154,6 +159,7 @@
             duzenlebtn.TabIndex = 0;
             duzenlebtn.Text = "D Ü Z E N L E";
             duzenlebtn.UseVisualStyleBackColor = false;
+            duzenlebtn.Click += duzenlebtn_Click;
             // 
             // menuform
             // 
@@ -169,13 +175,12 @@
         }
 
         #endregion
-
-        private TableLayoutPanel tablaypnl;
         private Button kasabtn;
         private Button stokbtn;
         private Button raporbtn;
         private Button siparisbtn;
         private Button satisbtn;
         private Button duzenlebtn;
+        public TableLayoutPanel tablaypnl;
     }
 }

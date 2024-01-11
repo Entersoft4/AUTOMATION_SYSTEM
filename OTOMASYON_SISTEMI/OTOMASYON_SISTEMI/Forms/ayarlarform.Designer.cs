@@ -44,7 +44,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(835, 433);
+            ClientSize = new Size(860, 423);
             Controls.Add(label1);
             Name = "ayarlarform";
             Text = "ayarlarform";

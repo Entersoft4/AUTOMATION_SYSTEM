@@ -33,8 +33,8 @@
             notifyIcon1 = new NotifyIcon(components);
             ustpnl = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            anatarih = new Label();
             anasaat = new Label();
+            anatarih = new Label();
             label1 = new Label();
             logopbox = new PictureBox();
             altpnl = new Panel();
@@ -46,7 +46,7 @@
             anasiparis = new Button();
             anasatis = new Button();
             anaduzenle = new Button();
-            panel1 = new Panel();
+            anapnl = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
             ustpnl.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -88,18 +88,6 @@
             tableLayoutPanel1.Size = new Size(599, 50);
             tableLayoutPanel1.TabIndex = 1;
             // 
-            // anatarih
-            // 
-            anatarih.Anchor = AnchorStyles.None;
-            anatarih.AutoSize = true;
-            anatarih.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            anatarih.ForeColor = Color.White;
-            anatarih.Location = new Point(422, 12);
-            anatarih.Name = "anatarih";
-            anatarih.Size = new Size(53, 26);
-            anatarih.TabIndex = 2;
-            anatarih.Text = "tarih";
-            // 
             // anasaat
             // 
             anasaat.Anchor = AnchorStyles.None;
@@ -111,6 +99,18 @@
             anasaat.Size = new Size(55, 29);
             anasaat.TabIndex = 1;
             anasaat.Text = "saat";
+            // 
+            // anatarih
+            // 
+            anatarih.Anchor = AnchorStyles.None;
+            anatarih.AutoSize = true;
+            anatarih.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            anatarih.ForeColor = Color.White;
+            anatarih.Location = new Point(422, 12);
+            anatarih.Name = "anatarih";
+            anatarih.Size = new Size(53, 26);
+            anatarih.TabIndex = 2;
+            anatarih.Text = "tarih";
             // 
             // label1
             // 
@@ -248,14 +248,14 @@
             anaduzenle.UseVisualStyleBackColor = true;
             anaduzenle.Click += anaduzenle_Click;
             // 
-            // panel1
+            // anapnl
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 50);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(846, 283);
-            panel1.TabIndex = 3;
-            panel1.Paint += panel1_Paint;
+            anapnl.Dock = DockStyle.Fill;
+            anapnl.Location = new Point(0, 50);
+            anapnl.Name = "anapnl";
+            anapnl.Size = new Size(846, 283);
+            anapnl.TabIndex = 3;
+            anapnl.Paint += panel1_Paint;
             // 
             // timer1
             // 
@@ -266,7 +266,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 383);
-            Controls.Add(panel1);
+            Controls.Add(anapnl);
             Controls.Add(altpnl);
             Controls.Add(ustpnl);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -302,7 +302,7 @@
         private Button anaayarlar;
         private Button anamenu;
         private Button anakasa;
-        private Panel panel1;
+        private Panel anapnl;
         private Label anatarih;
         private Label anasaat;
         private TableLayoutPanel tableLayoutPanel1;

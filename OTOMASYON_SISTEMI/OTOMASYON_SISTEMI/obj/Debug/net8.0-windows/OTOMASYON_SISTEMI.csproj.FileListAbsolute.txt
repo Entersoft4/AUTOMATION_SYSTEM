@@ -25,3 +25,12 @@ D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8
 D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.Forms.satisform.resources
 D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.Forms.siparisform.resources
 D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.Forms.stokform.resources
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.Forms.masaform.resources
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.csproj.AssemblyReference.cache
+D:\Belgeler\AUTOMATION_SYSTEM\OTOMASYON_SISTEMI\OTOMASYON_SISTEMI\obj\Debug\net8.0-windows\OTOMASYON_SISTEMI.csproj.CopyComplete

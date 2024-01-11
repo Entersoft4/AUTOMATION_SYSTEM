@@ -13,6 +13,9 @@
     <Compile Update="Forms\kasaform.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\masaform.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\menuform.cs">
       <SubType>Form</SubType>
     </Compile>
