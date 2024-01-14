@@ -16,10 +16,14 @@ namespace OTOMASYON_SISTEMI.Forms
         {
             InitializeComponent();
         }
+        public static string isim;
+        satisform sales = new satisform();
 
-        private void geribtn_Click_1(object sender, EventArgs e)
+        private void masa1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            isim = masa1.Text;
+            sales.Size=new Size(1257, 556);
+            sales.Show();
         }
     }
 }

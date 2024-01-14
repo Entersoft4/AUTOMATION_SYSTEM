@@ -17,64 +17,9 @@ namespace OTOMASYON_SISTEMI.Forms
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void satisform_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
+            label2.Text = "#" + masaform.isim;
         }
 
         private void urun_btn5_Click(object sender, EventArgs e)
@@ -85,6 +30,81 @@ namespace OTOMASYON_SISTEMI.Forms
         private void button8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void kapatbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void clearbtn_Click(object sender, EventArgs e)
+        {
+            satistbox.Clear();
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "1";
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "2";
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "3";
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "4";
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "5";
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "6";
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "7";
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "8";
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "9";
+        }
+
+        private void btnvrgl_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += ",";
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "0";
+        }
+
+        private void btnx_Click(object sender, EventArgs e)
+        {
+            satistbox.Text += "x";
         }
     }
 }

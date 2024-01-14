@@ -12,7 +12,6 @@ namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class menuform : Form
     {
-        duzenleform edit;
         public menuform()
         {
             InitializeComponent();
@@ -25,9 +24,7 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void duzenlebtn_Click(object sender, EventArgs e)
         {
-            edit = new duzenleform();
-            edit.Owner = this;
-            //formgetir(edit);
+            
         }
 
         private void satisbtn_Click(object sender, EventArgs e)

@@ -45,7 +45,6 @@ namespace OTOMASYON_SISTEMI
         menuform menu = new menuform();
         duzenleform edit = new duzenleform();
         masaform table = new masaform();
-        satisform sales = new satisform();
         siparisform order = new siparisform();
         raporform report = new raporform();
         stokform stock = new stokform();
@@ -91,14 +90,7 @@ namespace OTOMASYON_SISTEMI
 
         private void anasatis_Click(object sender, EventArgs e)
         {
-            formgetir(sales);
-            table.Size=new Size(1374, 600);
-            table.StartPosition = FormStartPosition.CenterScreen;
-            table.FormBorderStyle = FormBorderStyle.None;
-            table.ShowDialog();
-            //class icindeki fonksiyona ulasmak icin bu sekilde kullanilir.
-            //Function.msjgoster("Merhaba");
-            
+            formgetir(table);  
         }
 
         private void anasiparis_Click(object sender, EventArgs e)

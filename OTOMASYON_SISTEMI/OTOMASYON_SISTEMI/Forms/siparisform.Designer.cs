@@ -43,14 +43,7 @@
             panel6 = new Panel();
             label4 = new Label();
             button4 = new Button();
-            panel2 = new Panel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            panel7 = new Panel();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
+            siparistbl = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -58,9 +51,7 @@
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
-            panel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)siparistbl).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -69,7 +60,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.5774651F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.42254F));
             tableLayoutPanel1.Controls.Add(panel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(siparistbl, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -236,102 +227,15 @@
             button4.TabIndex = 0;
             button4.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // siparistbl
             // 
-            panel2.BackColor = Color.Silver;
-            panel2.Controls.Add(tableLayoutPanel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(251, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(585, 416);
-            panel2.TabIndex = 1;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(panel7, 0, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 10;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tableLayoutPanel3.Size = new Size(585, 416);
-            tableLayoutPanel3.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            panel7.Controls.Add(label9);
-            panel7.Controls.Add(label8);
-            panel7.Controls.Add(label7);
-            panel7.Controls.Add(label6);
-            panel7.Controls.Add(label5);
-            panel7.Dock = DockStyle.Fill;
-            panel7.Location = new Point(3, 3);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(579, 35);
-            panel7.TabIndex = 0;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.None;
-            label9.AutoSize = true;
-            label9.Location = new Point(480, 10);
-            label9.Name = "label9";
-            label9.Size = new Size(40, 15);
-            label9.TabIndex = 4;
-            label9.Text = "| 20.59";
-            // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.None;
-            label8.AutoSize = true;
-            label8.Location = new Point(360, 10);
-            label8.Name = "label8";
-            label8.Size = new Size(40, 15);
-            label8.TabIndex = 3;
-            label8.Text = "| 20.30";
-            label8.Click += label8_Click;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.None;
-            label7.AutoSize = true;
-            label7.Location = new Point(240, 10);
-            label7.Name = "label7";
-            label7.Size = new Size(40, 15);
-            label7.TabIndex = 2;
-            label7.Text = "| 19.53";
-            label7.Click += label7_Click;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Location = new Point(120, 10);
-            label6.Name = "label6";
-            label6.Size = new Size(40, 15);
-            label6.TabIndex = 1;
-            label6.Text = "| 19.30";
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Location = new Point(3, 10);
-            label5.Name = "label5";
-            label5.Size = new Size(53, 15);
-            label5.TabIndex = 0;
-            label5.Text = "#MASA1";
+            siparistbl.BackgroundColor = Color.Gainsboro;
+            siparistbl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            siparistbl.Dock = DockStyle.Fill;
+            siparistbl.Location = new Point(251, 3);
+            siparistbl.Name = "siparistbl";
+            siparistbl.Size = new Size(585, 416);
+            siparistbl.TabIndex = 1;
             // 
             // siparisform
             // 
@@ -352,10 +256,7 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel2.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)siparistbl).EndInit();
             ResumeLayout(false);
         }
 
@@ -363,7 +264,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
-        private Panel panel2;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel3;
         private Label label1;
@@ -377,12 +277,6 @@
         private Panel panel6;
         private Label label4;
         private Button button4;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Panel panel7;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label9;
+        private DataGridView siparistbl;
     }
 }
