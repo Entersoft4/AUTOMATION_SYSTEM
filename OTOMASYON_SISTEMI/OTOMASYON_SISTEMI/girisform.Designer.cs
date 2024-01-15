@@ -83,6 +83,7 @@
             giristbox.PasswordChar = '*';
             giristbox.Size = new Size(184, 23);
             giristbox.TabIndex = 3;
+            giristbox.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 

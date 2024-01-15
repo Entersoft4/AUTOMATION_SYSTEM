@@ -32,24 +32,11 @@
             panel1 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel3 = new Panel();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            urun_btn16 = new Button();
-            urun_btn15 = new Button();
-            urun_btn14 = new Button();
-            urun_btn13 = new Button();
-            urun_btn12 = new Button();
-            urun_btn11 = new Button();
-            urun_btn10 = new Button();
-            urun_btn9 = new Button();
-            urun_btn8 = new Button();
-            urun_btn7 = new Button();
-            urun_btn6 = new Button();
-            urun_btn5 = new Button();
-            urun_btn4 = new Button();
-            urun_btn3 = new Button();
-            urun_btn2 = new Button();
-            urun_btn1 = new Button();
-            vScrollBar2 = new VScrollBar();
+            groupBox2 = new GroupBox();
+            lviewmenu = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             panel4 = new Panel();
             tableLayoutPanel5 = new TableLayoutPanel();
             btnx = new Button();
@@ -78,31 +65,36 @@
             nakitbtn = new Button();
             kapatbtn = new Button();
             panel5 = new Panel();
-            satistbl = new DataGridView();
+            lviewsatis = new ListView();
+            columnHeader4 = new ColumnHeader();
+            columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
             panel6 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
-            cat_btn5 = new Button();
-            cat_btn4 = new Button();
-            cat_btn3 = new Button();
-            cat_btn2 = new Button();
-            cat_btn1 = new Button();
-            vScrollBar1 = new VScrollBar();
-            label1 = new Label();
+            groupBox1 = new GroupBox();
+            btnarasck = new Button();
+            btnmkrn = new Button();
+            btncorba = new Button();
+            btnfastfood = new Button();
+            btnyanurun = new Button();
+            btntatlı = new Button();
+            btniçecek = new Button();
+            btnanaymk = new Button();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            groupBox2.SuspendLayout();
             panel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             panel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)satistbl).BeginInit();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -153,248 +145,52 @@
             // panel3
             // 
             panel3.BackColor = Color.LemonChiffon;
-            panel3.Controls.Add(tableLayoutPanel3);
-            panel3.Controls.Add(vScrollBar2);
+            panel3.Controls.Add(groupBox2);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(316, 202);
             panel3.TabIndex = 0;
             // 
-            // tableLayoutPanel3
+            // groupBox2
             // 
-            tableLayoutPanel3.ColumnCount = 4;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Controls.Add(urun_btn16, 3, 3);
-            tableLayoutPanel3.Controls.Add(urun_btn15, 2, 3);
-            tableLayoutPanel3.Controls.Add(urun_btn14, 1, 3);
-            tableLayoutPanel3.Controls.Add(urun_btn13, 0, 3);
-            tableLayoutPanel3.Controls.Add(urun_btn12, 3, 2);
-            tableLayoutPanel3.Controls.Add(urun_btn11, 2, 2);
-            tableLayoutPanel3.Controls.Add(urun_btn10, 1, 2);
-            tableLayoutPanel3.Controls.Add(urun_btn9, 0, 2);
-            tableLayoutPanel3.Controls.Add(urun_btn8, 3, 1);
-            tableLayoutPanel3.Controls.Add(urun_btn7, 2, 1);
-            tableLayoutPanel3.Controls.Add(urun_btn6, 1, 1);
-            tableLayoutPanel3.Controls.Add(urun_btn5, 0, 1);
-            tableLayoutPanel3.Controls.Add(urun_btn4, 3, 0);
-            tableLayoutPanel3.Controls.Add(urun_btn3, 2, 0);
-            tableLayoutPanel3.Controls.Add(urun_btn2, 1, 0);
-            tableLayoutPanel3.Controls.Add(urun_btn1, 0, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel3.Size = new Size(306, 202);
-            tableLayoutPanel3.TabIndex = 1;
+            groupBox2.Controls.Add(lviewmenu);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            groupBox2.Location = new Point(0, 0);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(316, 202);
+            groupBox2.TabIndex = 0;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "ÜRÜNLER";
             // 
-            // urun_btn16
+            // lviewmenu
             // 
-            urun_btn16.Dock = DockStyle.Fill;
-            urun_btn16.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn16.FlatStyle = FlatStyle.Flat;
-            urun_btn16.Location = new Point(231, 153);
-            urun_btn16.Name = "urun_btn16";
-            urun_btn16.Size = new Size(72, 46);
-            urun_btn16.TabIndex = 15;
-            urun_btn16.Text = ".";
-            urun_btn16.UseVisualStyleBackColor = true;
+            lviewmenu.BackColor = Color.LemonChiffon;
+            lviewmenu.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            lviewmenu.Dock = DockStyle.Fill;
+            lviewmenu.GridLines = true;
+            lviewmenu.Location = new Point(3, 21);
+            lviewmenu.Name = "lviewmenu";
+            lviewmenu.Size = new Size(310, 178);
+            lviewmenu.TabIndex = 0;
+            lviewmenu.UseCompatibleStateImageBehavior = false;
+            lviewmenu.View = View.Details;
             // 
-            // urun_btn15
+            // columnHeader1
             // 
-            urun_btn15.Dock = DockStyle.Fill;
-            urun_btn15.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn15.FlatStyle = FlatStyle.Flat;
-            urun_btn15.Location = new Point(155, 153);
-            urun_btn15.Name = "urun_btn15";
-            urun_btn15.Size = new Size(70, 46);
-            urun_btn15.TabIndex = 14;
-            urun_btn15.Text = ".";
-            urun_btn15.UseVisualStyleBackColor = true;
+            columnHeader1.Text = "Ürün Adı";
+            columnHeader1.Width = 120;
             // 
-            // urun_btn14
+            // columnHeader2
             // 
-            urun_btn14.Dock = DockStyle.Fill;
-            urun_btn14.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn14.FlatStyle = FlatStyle.Flat;
-            urun_btn14.Location = new Point(79, 153);
-            urun_btn14.Name = "urun_btn14";
-            urun_btn14.Size = new Size(70, 46);
-            urun_btn14.TabIndex = 13;
-            urun_btn14.Text = ".";
-            urun_btn14.UseVisualStyleBackColor = true;
+            columnHeader2.Text = "Ürün Fiyatı ";
+            columnHeader2.Width = 120;
             // 
-            // urun_btn13
+            // columnHeader3
             // 
-            urun_btn13.Dock = DockStyle.Fill;
-            urun_btn13.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn13.FlatStyle = FlatStyle.Flat;
-            urun_btn13.Location = new Point(3, 153);
-            urun_btn13.Name = "urun_btn13";
-            urun_btn13.Size = new Size(70, 46);
-            urun_btn13.TabIndex = 12;
-            urun_btn13.Text = ".";
-            urun_btn13.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn12
-            // 
-            urun_btn12.Dock = DockStyle.Fill;
-            urun_btn12.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn12.FlatStyle = FlatStyle.Flat;
-            urun_btn12.Location = new Point(231, 103);
-            urun_btn12.Name = "urun_btn12";
-            urun_btn12.Size = new Size(72, 44);
-            urun_btn12.TabIndex = 11;
-            urun_btn12.Text = ".";
-            urun_btn12.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn11
-            // 
-            urun_btn11.Dock = DockStyle.Fill;
-            urun_btn11.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn11.FlatStyle = FlatStyle.Flat;
-            urun_btn11.Location = new Point(155, 103);
-            urun_btn11.Name = "urun_btn11";
-            urun_btn11.Size = new Size(70, 44);
-            urun_btn11.TabIndex = 10;
-            urun_btn11.Text = ".";
-            urun_btn11.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn10
-            // 
-            urun_btn10.Dock = DockStyle.Fill;
-            urun_btn10.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn10.FlatStyle = FlatStyle.Flat;
-            urun_btn10.Location = new Point(79, 103);
-            urun_btn10.Name = "urun_btn10";
-            urun_btn10.Size = new Size(70, 44);
-            urun_btn10.TabIndex = 9;
-            urun_btn10.Text = ".";
-            urun_btn10.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn9
-            // 
-            urun_btn9.Dock = DockStyle.Fill;
-            urun_btn9.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn9.FlatStyle = FlatStyle.Flat;
-            urun_btn9.Location = new Point(3, 103);
-            urun_btn9.Name = "urun_btn9";
-            urun_btn9.Size = new Size(70, 44);
-            urun_btn9.TabIndex = 8;
-            urun_btn9.Text = ".";
-            urun_btn9.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn8
-            // 
-            urun_btn8.Dock = DockStyle.Fill;
-            urun_btn8.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn8.FlatStyle = FlatStyle.Flat;
-            urun_btn8.Location = new Point(231, 53);
-            urun_btn8.Name = "urun_btn8";
-            urun_btn8.Size = new Size(72, 44);
-            urun_btn8.TabIndex = 7;
-            urun_btn8.Text = ".";
-            urun_btn8.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn7
-            // 
-            urun_btn7.Dock = DockStyle.Fill;
-            urun_btn7.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn7.FlatStyle = FlatStyle.Flat;
-            urun_btn7.Location = new Point(155, 53);
-            urun_btn7.Name = "urun_btn7";
-            urun_btn7.Size = new Size(70, 44);
-            urun_btn7.TabIndex = 6;
-            urun_btn7.Text = ".";
-            urun_btn7.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn6
-            // 
-            urun_btn6.Dock = DockStyle.Fill;
-            urun_btn6.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn6.FlatStyle = FlatStyle.Flat;
-            urun_btn6.Location = new Point(79, 53);
-            urun_btn6.Name = "urun_btn6";
-            urun_btn6.Size = new Size(70, 44);
-            urun_btn6.TabIndex = 5;
-            urun_btn6.Text = ".";
-            urun_btn6.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn5
-            // 
-            urun_btn5.Dock = DockStyle.Fill;
-            urun_btn5.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn5.FlatStyle = FlatStyle.Flat;
-            urun_btn5.Location = new Point(3, 53);
-            urun_btn5.Name = "urun_btn5";
-            urun_btn5.Size = new Size(70, 44);
-            urun_btn5.TabIndex = 4;
-            urun_btn5.Text = "KAHVE";
-            urun_btn5.UseVisualStyleBackColor = true;
-            urun_btn5.Click += urun_btn5_Click;
-            // 
-            // urun_btn4
-            // 
-            urun_btn4.Dock = DockStyle.Fill;
-            urun_btn4.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn4.FlatStyle = FlatStyle.Flat;
-            urun_btn4.Location = new Point(231, 3);
-            urun_btn4.Name = "urun_btn4";
-            urun_btn4.Size = new Size(72, 44);
-            urun_btn4.TabIndex = 3;
-            urun_btn4.Text = "ÇAY";
-            urun_btn4.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn3
-            // 
-            urun_btn3.Dock = DockStyle.Fill;
-            urun_btn3.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn3.FlatStyle = FlatStyle.Flat;
-            urun_btn3.Location = new Point(155, 3);
-            urun_btn3.Name = "urun_btn3";
-            urun_btn3.Size = new Size(70, 44);
-            urun_btn3.TabIndex = 2;
-            urun_btn3.Text = "LİMONATA";
-            urun_btn3.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn2
-            // 
-            urun_btn2.Dock = DockStyle.Fill;
-            urun_btn2.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn2.FlatStyle = FlatStyle.Flat;
-            urun_btn2.Location = new Point(79, 3);
-            urun_btn2.Name = "urun_btn2";
-            urun_btn2.Size = new Size(70, 44);
-            urun_btn2.TabIndex = 1;
-            urun_btn2.Text = "FANTA";
-            urun_btn2.UseVisualStyleBackColor = true;
-            // 
-            // urun_btn1
-            // 
-            urun_btn1.Dock = DockStyle.Fill;
-            urun_btn1.FlatAppearance.BorderColor = Color.SlateGray;
-            urun_btn1.FlatStyle = FlatStyle.Flat;
-            urun_btn1.Location = new Point(3, 3);
-            urun_btn1.Name = "urun_btn1";
-            urun_btn1.Size = new Size(70, 44);
-            urun_btn1.TabIndex = 0;
-            urun_btn1.Text = "KOLA";
-            urun_btn1.UseVisualStyleBackColor = true;
-            // 
-            // vScrollBar2
-            // 
-            vScrollBar2.Dock = DockStyle.Right;
-            vScrollBar2.Location = new Point(306, 0);
-            vScrollBar2.Name = "vScrollBar2";
-            vScrollBar2.Size = new Size(10, 202);
-            vScrollBar2.TabIndex = 0;
+            columnHeader3.Text = "Ürün No";
+            columnHeader3.Width = 75;
             // 
             // panel4
             // 
@@ -740,6 +536,7 @@
             iptalbtn.TabIndex = 2;
             iptalbtn.Text = "İPTAL\r\nET";
             iptalbtn.UseVisualStyleBackColor = false;
+            iptalbtn.Click += iptalbtn_Click;
             // 
             // açıkbtn
             // 
@@ -787,7 +584,7 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Controls.Add(satistbl);
+            panel5.Controls.Add(lviewsatis);
             panel5.Controls.Add(panel6);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(325, 3);
@@ -795,15 +592,32 @@
             panel5.Size = new Size(317, 202);
             panel5.TabIndex = 4;
             // 
-            // satistbl
+            // lviewsatis
             // 
-            satistbl.BackgroundColor = Color.Gainsboro;
-            satistbl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            satistbl.Dock = DockStyle.Fill;
-            satistbl.Location = new Point(0, 34);
-            satistbl.Name = "satistbl";
-            satistbl.Size = new Size(317, 168);
-            satistbl.TabIndex = 1;
+            lviewsatis.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6 });
+            lviewsatis.Dock = DockStyle.Fill;
+            lviewsatis.GridLines = true;
+            lviewsatis.Location = new Point(0, 34);
+            lviewsatis.Name = "lviewsatis";
+            lviewsatis.Size = new Size(317, 168);
+            lviewsatis.TabIndex = 1;
+            lviewsatis.UseCompatibleStateImageBehavior = false;
+            lviewsatis.View = View.Details;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "ADET";
+            columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "ÜRÜN İSMİ";
+            columnHeader5.Width = 120;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "FİYAT";
+            columnHeader6.Width = 70;
             // 
             // panel6
             // 
@@ -828,88 +642,144 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(cat_btn5);
-            panel2.Controls.Add(cat_btn4);
-            panel2.Controls.Add(cat_btn3);
-            panel2.Controls.Add(cat_btn2);
-            panel2.Controls.Add(cat_btn1);
-            panel2.Controls.Add(vScrollBar1);
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(groupBox1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(205, 416);
             panel2.TabIndex = 1;
             // 
-            // cat_btn5
+            // groupBox1
             // 
-            cat_btn5.Dock = DockStyle.Top;
-            cat_btn5.Location = new Point(0, 237);
-            cat_btn5.Name = "cat_btn5";
-            cat_btn5.Size = new Size(195, 50);
-            cat_btn5.TabIndex = 7;
-            cat_btn5.Text = "YAN ÜRÜNLER";
-            cat_btn5.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(btnarasck);
+            groupBox1.Controls.Add(btnmkrn);
+            groupBox1.Controls.Add(btncorba);
+            groupBox1.Controls.Add(btnfastfood);
+            groupBox1.Controls.Add(btnyanurun);
+            groupBox1.Controls.Add(btntatlı);
+            groupBox1.Controls.Add(btniçecek);
+            groupBox1.Controls.Add(btnanaymk);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            groupBox1.ForeColor = Color.Black;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(205, 416);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "KATEGORİLER";
             // 
-            // cat_btn4
+            // btnarasck
             // 
-            cat_btn4.Dock = DockStyle.Top;
-            cat_btn4.Location = new Point(0, 187);
-            cat_btn4.Name = "cat_btn4";
-            cat_btn4.Size = new Size(195, 50);
-            cat_btn4.TabIndex = 6;
-            cat_btn4.Text = "TATLILAR";
-            cat_btn4.UseVisualStyleBackColor = true;
+            btnarasck.Cursor = Cursors.Hand;
+            btnarasck.Dock = DockStyle.Top;
+            btnarasck.FlatAppearance.BorderColor = Color.Black;
+            btnarasck.FlatStyle = FlatStyle.Flat;
+            btnarasck.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnarasck.Location = new Point(3, 361);
+            btnarasck.Name = "btnarasck";
+            btnarasck.Size = new Size(199, 47);
+            btnarasck.TabIndex = 7;
+            btnarasck.Text = "ARA SICAK";
+            btnarasck.UseVisualStyleBackColor = true;
             // 
-            // cat_btn3
+            // btnmkrn
             // 
-            cat_btn3.Dock = DockStyle.Top;
-            cat_btn3.Location = new Point(0, 137);
-            cat_btn3.Name = "cat_btn3";
-            cat_btn3.Size = new Size(195, 50);
-            cat_btn3.TabIndex = 5;
-            cat_btn3.Text = "LAHMACUN";
-            cat_btn3.UseVisualStyleBackColor = true;
+            btnmkrn.Cursor = Cursors.Hand;
+            btnmkrn.Dock = DockStyle.Top;
+            btnmkrn.FlatAppearance.BorderColor = Color.Black;
+            btnmkrn.FlatStyle = FlatStyle.Flat;
+            btnmkrn.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnmkrn.Location = new Point(3, 314);
+            btnmkrn.Name = "btnmkrn";
+            btnmkrn.Size = new Size(199, 47);
+            btnmkrn.TabIndex = 6;
+            btnmkrn.Text = "MAKARNA";
+            btnmkrn.UseVisualStyleBackColor = true;
             // 
-            // cat_btn2
+            // btncorba
             // 
-            cat_btn2.Dock = DockStyle.Top;
-            cat_btn2.Location = new Point(0, 87);
-            cat_btn2.Name = "cat_btn2";
-            cat_btn2.Size = new Size(195, 50);
-            cat_btn2.TabIndex = 4;
-            cat_btn2.Text = "ÇORBALAR";
-            cat_btn2.UseVisualStyleBackColor = true;
+            btncorba.Cursor = Cursors.Hand;
+            btncorba.Dock = DockStyle.Top;
+            btncorba.FlatAppearance.BorderColor = Color.Black;
+            btncorba.FlatStyle = FlatStyle.Flat;
+            btncorba.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btncorba.Location = new Point(3, 267);
+            btncorba.Name = "btncorba";
+            btncorba.Size = new Size(199, 47);
+            btncorba.TabIndex = 5;
+            btncorba.Text = "ÇORBALAR";
+            btncorba.UseVisualStyleBackColor = true;
             // 
-            // cat_btn1
+            // btnfastfood
             // 
-            cat_btn1.Dock = DockStyle.Top;
-            cat_btn1.Location = new Point(0, 37);
-            cat_btn1.Name = "cat_btn1";
-            cat_btn1.Size = new Size(195, 50);
-            cat_btn1.TabIndex = 3;
-            cat_btn1.Text = "İÇECEKLER";
-            cat_btn1.UseVisualStyleBackColor = true;
+            btnfastfood.Cursor = Cursors.Hand;
+            btnfastfood.Dock = DockStyle.Top;
+            btnfastfood.FlatAppearance.BorderColor = Color.Black;
+            btnfastfood.FlatStyle = FlatStyle.Flat;
+            btnfastfood.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnfastfood.Location = new Point(3, 220);
+            btnfastfood.Name = "btnfastfood";
+            btnfastfood.Size = new Size(199, 47);
+            btnfastfood.TabIndex = 4;
+            btnfastfood.Text = "FAST FOOD";
+            btnfastfood.UseVisualStyleBackColor = true;
             // 
-            // vScrollBar1
+            // btnyanurun
             // 
-            vScrollBar1.Dock = DockStyle.Right;
-            vScrollBar1.Location = new Point(195, 37);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(10, 379);
-            vScrollBar1.TabIndex = 2;
+            btnyanurun.Cursor = Cursors.Hand;
+            btnyanurun.Dock = DockStyle.Top;
+            btnyanurun.FlatAppearance.BorderColor = Color.Black;
+            btnyanurun.FlatStyle = FlatStyle.Flat;
+            btnyanurun.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnyanurun.Location = new Point(3, 173);
+            btnyanurun.Name = "btnyanurun";
+            btnyanurun.Size = new Size(199, 47);
+            btnyanurun.TabIndex = 3;
+            btnyanurun.Text = "YAN ÜRÜNLER";
+            btnyanurun.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btntatlı
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.White;
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 162);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(204, 37);
-            label1.TabIndex = 1;
-            label1.Text = "KATEGORİLER";
+            btntatlı.Cursor = Cursors.Hand;
+            btntatlı.Dock = DockStyle.Top;
+            btntatlı.FlatAppearance.BorderColor = Color.Black;
+            btntatlı.FlatStyle = FlatStyle.Flat;
+            btntatlı.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btntatlı.Location = new Point(3, 126);
+            btntatlı.Name = "btntatlı";
+            btntatlı.Size = new Size(199, 47);
+            btntatlı.TabIndex = 2;
+            btntatlı.Text = "TATLILAR";
+            btntatlı.UseVisualStyleBackColor = true;
+            // 
+            // btniçecek
+            // 
+            btniçecek.Cursor = Cursors.Hand;
+            btniçecek.Dock = DockStyle.Top;
+            btniçecek.FlatAppearance.BorderColor = Color.Black;
+            btniçecek.FlatStyle = FlatStyle.Flat;
+            btniçecek.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btniçecek.Location = new Point(3, 79);
+            btniçecek.Name = "btniçecek";
+            btniçecek.Size = new Size(199, 47);
+            btniçecek.TabIndex = 1;
+            btniçecek.Text = "İÇECEKLER";
+            btniçecek.UseVisualStyleBackColor = true;
+            // 
+            // btnanaymk
+            // 
+            btnanaymk.Cursor = Cursors.Hand;
+            btnanaymk.Dock = DockStyle.Top;
+            btnanaymk.FlatAppearance.BorderColor = Color.Black;
+            btnanaymk.FlatStyle = FlatStyle.Flat;
+            btnanaymk.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnanaymk.Location = new Point(3, 32);
+            btnanaymk.Name = "btnanaymk";
+            btnanaymk.Size = new Size(199, 47);
+            btnanaymk.TabIndex = 0;
+            btnanaymk.Text = "ANA YEMEK";
+            btnanaymk.UseVisualStyleBackColor = true;
             // 
             // satisform
             // 
@@ -923,11 +793,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "satisform";
             Load += satisform_Load;
+            Shown += satisform_Shown;
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
@@ -935,11 +806,10 @@
             panel7.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)satistbl).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -948,17 +818,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Panel panel2;
-        private Button cat_btn5;
-        private Button cat_btn4;
-        private Button cat_btn3;
-        private Button cat_btn2;
-        private Button cat_btn1;
-        private VScrollBar vScrollBar1;
-        private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel3;
-        private TableLayoutPanel tableLayoutPanel3;
-        private VScrollBar vScrollBar2;
         private Panel panel4;
         private TableLayoutPanel tableLayoutPanel4;
         private TextBox satistbox;
@@ -966,22 +827,6 @@
         private Panel panel7;
         private TableLayoutPanel tableLayoutPanel8;
         private Button kapatbtn;
-        private Button urun_btn16;
-        private Button urun_btn15;
-        private Button urun_btn14;
-        private Button urun_btn13;
-        private Button urun_btn12;
-        private Button urun_btn11;
-        private Button urun_btn10;
-        private Button urun_btn9;
-        private Button urun_btn8;
-        private Button urun_btn7;
-        private Button urun_btn6;
-        private Button urun_btn5;
-        private Button urun_btn4;
-        private Button urun_btn3;
-        private Button urun_btn2;
-        private Button urun_btn1;
         private Button btnx;
         private Button btn0;
         private Button btnvrgl;
@@ -1003,8 +848,25 @@
         private Button rezervbtn;
         private Button kredibtn;
         private Panel panel5;
-        private DataGridView satistbl;
         private Panel panel6;
         private Label label2;
+        private GroupBox groupBox1;
+        private Button btnanaymk;
+        private Button btnarasck;
+        private Button btnmkrn;
+        private Button btncorba;
+        private Button btnfastfood;
+        private Button btnyanurun;
+        private Button btntatlı;
+        private Button btniçecek;
+        private GroupBox groupBox2;
+        private ListView lviewmenu;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ListView lviewsatis;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
     }
 }

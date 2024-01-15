@@ -51,6 +51,16 @@ namespace OTOMASYON_SISTEMI
                 tbl.DataSource = dt;
                 con.Close();
             }
+            else if (who == "satis")
+            {
+                string getir = "Select * From Satis_Bilgi";
+                SqlCommand cmd = new SqlCommand(getir, con);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                tbl.DataSource = dt;
+                con.Close();
+            }
         }
         public static void veriekle(string who)
         {
@@ -114,6 +124,15 @@ namespace OTOMASYON_SISTEMI
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            else if (who == "satis")
+            {
+                con.Open();
+                string sil = "Delete From Satis_Bilgi Where id = @id";
+                SqlCommand cmd = new SqlCommand(sil, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
         }
         public static void veriguncelle(string who, DataGridView tbl)
         {
@@ -121,5 +140,50 @@ namespace OTOMASYON_SISTEMI
             //veri güncellemede değerleri tbox içinden alıyoruz.
             //!güncelle butonlarında çalışan kod burada çalışmıyor.
         }
+        public static void satisekle(ListView lv,TextBox tbox)
+        {
+            //satis yapılırken ki bilgileri ekliyoruz.
+            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlCommand cmd = new SqlCommand("Select urun_ismi, urun_ucreti From Urun_bilgi", con);
+            SqlDataReader rdr = null;
+            try
+            {
+                if (con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                rdr = cmd.ExecuteReader();
+                int sayac = 0;
+                while (rdr.Read())
+                {
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])*tbox.Text.Length));
+                    lv.Items.Add(rdr["urun_ismi"].ToString());
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
+                    sayac++;
+                }
+            }
+            catch (Exception ex)
+            {
+                string hata = ex.Message;
+                throw;
+            }
+            finally
+            {
+                rdr.Close();
+                con.Dispose();
+                con.Close();
+            }
+        }
     }
 }
+/*con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            con.Open();
+            string ekle = "insert into Satis_Bilgi (adet,urun_ismi,fiyat) values " +
+            "(@adet,@urunismi,@fiyat)";
+            SqlCommand cmd = new SqlCommand(ekle, con);
+            cmd.Parameters.AddWithValue("@adet", tbox.Text);
+            cmd.Parameters.AddWithValue("@urunismi", btn.Text);
+            cmd.Parameters.AddWithValue("@fiyat", tbox.Text);// fiyatı veritabanından çek!!!
+            cmd.ExecuteNonQuery();
+            con.Close();
+*/

@@ -20,6 +20,8 @@ namespace OTOMASYON_SISTEMI.Forms
         private void satisform_Load(object sender, EventArgs e)
         {
             label2.Text = "#" + masaform.isim;
+            //
+            Function.satisekle(lviewsatis, satistbox);
         }
 
         private void urun_btn5_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void kapatbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
@@ -105,6 +107,22 @@ namespace OTOMASYON_SISTEMI.Forms
         private void btnx_Click(object sender, EventArgs e)
         {
             satistbox.Text += "x";
+        }
+
+        private void satisform_Shown(object sender, EventArgs e)
+        {
+            label2.Text = "#" + masaform.isim;
+        }
+
+        private void iptalbtn_Click(object sender, EventArgs e)
+        {
+            //tablonun seçili satırına göre silme işlemini gerçekleştiriyoruz.
+            //foreach (DataGridViewRow drow in satistbl.SelectedRows)
+            //{
+            //    int id = Convert.ToInt32(drow.Cells[0].Value);
+            //    Function.verisil("satis", id);
+            //    Function.tablogetir("satis", satistbl);
+            //}
         }
     }
 }
