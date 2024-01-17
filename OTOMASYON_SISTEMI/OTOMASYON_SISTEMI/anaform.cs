@@ -53,6 +53,7 @@ namespace OTOMASYON_SISTEMI
 
         private void anaform_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //uygulamayı sonlandırıyor.
             Application.Exit();
         }
 
@@ -72,7 +73,7 @@ namespace OTOMASYON_SISTEMI
         {
 
         }
-
+        //alt menüdeki butonlara tıklandığında form getirme olaylarını yazıyoruz.
         private void anastok_Click(object sender, EventArgs e)
         {
             formgetir(stock);
@@ -112,7 +113,7 @@ namespace OTOMASYON_SISTEMI
         {
             formgetir(menu);
         }
-
+        //buraya kadar fonksiyon ile form getirme olayını yazıyoruz.
         private void timer1_Tick(object sender, EventArgs e)
         {
             //anlık saat

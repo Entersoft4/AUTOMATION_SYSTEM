@@ -12,29 +12,16 @@ namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class kasaform : Form
     {
+        //public ListBox chestlbox;
         public kasaform()
         {
             InitializeComponent();
         }
-
+       
         private void kasaform_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            //toplam tutarı lbox içine yazdırıyoruz.
+            kasadurumu.Items.Add(satisform.nakit.ToString());
         }
 
         private void label1_Click_1(object sender, EventArgs e)

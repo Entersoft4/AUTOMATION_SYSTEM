@@ -16,7 +16,6 @@ namespace OTOMASYON_SISTEMI
         public static SqlConnection con;
         public static SqlDataReader rdr;
         public static SqlCommand cmd;
-
         public static void tablogetir(string who,DataGridView tbl)
         {
             //who ile hangi tablonun geleceğini kontrol ediyoruz.
@@ -86,7 +85,7 @@ namespace OTOMASYON_SISTEMI
             else if (who == "urun")
             {
                 con.Open();
-                string ekle = "insert into Urun_Bilgi values ('urun','ornek','1')";
+                string ekle = "insert into Urun_Bilgi values ('urun','ornek','1','0')";
                 SqlCommand cmd = new SqlCommand(ekle, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -140,15 +139,16 @@ namespace OTOMASYON_SISTEMI
             //veri güncellemede değerleri tbox içinden alıyoruz.
             //!güncelle butonlarında çalışan kod burada çalışmıyor.
         }
-        public static void satisekle(ListView lv,TextBox tbox)
+        public static void urungetir(ListView lv)
         {
-            //satis yapılırken ki bilgileri ekliyoruz.
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
-            SqlCommand cmd = new SqlCommand("Select urun_ismi, urun_ucreti From Urun_bilgi", con);
+            //urun bilgilerini getiriyoruz.
+            lv.Items.Clear();
+            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlCommand cmd = new SqlCommand("Select urun_ismi, urun_ucreti, urun_no From Urun_bilgi", con);
             SqlDataReader rdr = null;
             try
             {
-                if (con.State==ConnectionState.Closed)
+                if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
@@ -156,9 +156,81 @@ namespace OTOMASYON_SISTEMI
                 int sayac = 0;
                 while (rdr.Read())
                 {
-                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])*tbox.Text.Length));
                     lv.Items.Add(rdr["urun_ismi"].ToString());
                     lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_no"])));
+                    sayac++;
+                }
+            }
+            catch (Exception ex)
+            {
+                string hata = ex.Message;
+                throw;
+            }
+            finally
+            {
+                rdr.Close();
+                con.Dispose();
+                con.Close();
+            }
+        }
+        public static void ktgrgetir(ListView lv, Button btn)
+        {
+            //Kategoriye gore urun bilgilerini getiriyoruz.
+            lv.Items.Clear();
+            string ktgr = btn.Text;
+            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
+            SqlDataReader rdr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                rdr = cmd.ExecuteReader();
+                int sayac = 0;
+                while (rdr.Read())
+                {
+                    lv.Items.Add(rdr["urun_ismi"].ToString());
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_no"])));
+                    sayac++;
+                }
+            }
+            catch (Exception ex)
+            {
+                string hata = ex.Message;
+                throw;
+            }
+            finally
+            {
+                rdr.Close();
+                con.Dispose();
+                con.Close();
+            }
+        }
+        public static void urunbul(ListView lv, TextBox tbox)
+        {
+            //urun no suna gore urun bilgilerini getiriyoruz.
+            lv.Items.Clear();
+            string uno = tbox.Text;
+            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_no LIKE '%" + uno + "%'", con);
+            SqlDataReader rdr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                rdr = cmd.ExecuteReader();
+                int sayac = 0;
+                while (rdr.Read())
+                {
+                    lv.Items.Add(rdr["urun_ismi"].ToString());
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_no"])));
                     sayac++;
                 }
             }
@@ -176,14 +248,3 @@ namespace OTOMASYON_SISTEMI
         }
     }
 }
-/*con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
-            con.Open();
-            string ekle = "insert into Satis_Bilgi (adet,urun_ismi,fiyat) values " +
-            "(@adet,@urunismi,@fiyat)";
-            SqlCommand cmd = new SqlCommand(ekle, con);
-            cmd.Parameters.AddWithValue("@adet", tbox.Text);
-            cmd.Parameters.AddWithValue("@urunismi", btn.Text);
-            cmd.Parameters.AddWithValue("@fiyat", tbox.Text);// fiyatı veritabanından çek!!!
-            cmd.ExecuteNonQuery();
-            con.Close();
-*/

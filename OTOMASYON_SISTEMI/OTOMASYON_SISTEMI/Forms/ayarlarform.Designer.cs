@@ -34,11 +34,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(392, 121);
+            label1.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Location = new Point(375, 9);
             label1.Name = "label1";
-            label1.Size = new Size(42, 15);
+            label1.Size = new Size(114, 30);
             label1.TabIndex = 0;
-            label1.Text = "ayarlar";
+            label1.Text = "AYARLAR";
             // 
             // ayarlarform
             // 

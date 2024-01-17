@@ -94,6 +94,8 @@
             label6 = new Label();
             label5 = new Label();
             edittabc = new TabControl();
+            unotbox = new TextBox();
+            label20 = new Label();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -370,6 +372,8 @@
             // 
             // panel13
             // 
+            panel13.Controls.Add(unotbox);
+            panel13.Controls.Add(label20);
             panel13.Controls.Add(ucretbox);
             panel13.Controls.Add(label19);
             panel13.Controls.Add(ugunceltbox);
@@ -386,7 +390,7 @@
             // ucretbox
             // 
             ucretbox.Anchor = AnchorStyles.None;
-            ucretbox.Location = new Point(220, 39);
+            ucretbox.Location = new Point(230, 39);
             ucretbox.Name = "ucretbox";
             ucretbox.Size = new Size(60, 23);
             ucretbox.TabIndex = 27;
@@ -396,7 +400,7 @@
             label19.Anchor = AnchorStyles.None;
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label19.Location = new Point(170, 40);
+            label19.Location = new Point(182, 40);
             label19.Name = "label19";
             label19.Size = new Size(50, 19);
             label19.TabIndex = 26;
@@ -889,6 +893,25 @@
             edittabc.Size = new Size(846, 424);
             edittabc.TabIndex = 1;
             // 
+            // unotbox
+            // 
+            unotbox.Anchor = AnchorStyles.None;
+            unotbox.Location = new Point(230, 69);
+            unotbox.Name = "unotbox";
+            unotbox.Size = new Size(60, 23);
+            unotbox.TabIndex = 29;
+            // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.None;
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label20.Location = new Point(163, 70);
+            label20.Name = "label20";
+            label20.Size = new Size(69, 19);
+            label20.TabIndex = 28;
+            label20.Text = "Ürün no:";
+            // 
             // duzenleform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1005,5 +1028,7 @@
         private Label label19;
         private MaskedTextBox cteltbox;
         private TextBox misimtbox;
+        private TextBox unotbox;
+        private Label label20;
     }
 }

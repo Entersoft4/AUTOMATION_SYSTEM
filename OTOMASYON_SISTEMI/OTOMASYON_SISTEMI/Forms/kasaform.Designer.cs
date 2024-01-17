@@ -43,9 +43,12 @@
             // kasadurumu
             // 
             kasadurumu.BackColor = Color.Silver;
+            kasadurumu.BorderStyle = BorderStyle.None;
+            kasadurumu.Cursor = Cursors.Cross;
             kasadurumu.Dock = DockStyle.Right;
+            kasadurumu.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
             kasadurumu.FormattingEnabled = true;
-            kasadurumu.ItemHeight = 15;
+            kasadurumu.ItemHeight = 17;
             kasadurumu.Location = new Point(600, 0);
             kasadurumu.Name = "kasadurumu";
             kasadurumu.Size = new Size(236, 428);

@@ -25,6 +25,7 @@ namespace OTOMASYON_SISTEMI.Forms
             con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
             cmd = new SqlCommand();
         }
+        //isim değişkenlerimizi tanımlıyoruz.
         public static string masaisim;
         public static string masakpst;
         public static string calisanisim;
@@ -85,20 +86,33 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void meklebtn_Click(object sender, EventArgs e)
         {
+            //veri ekleme, gösterme ve tbox içini temizliyoruz.
             Function.veriekle("masa");
             Function.tablogetir("masa", masatbl);
+            misimtbox.Clear();
+            mkpstbox.Clear();
         }
 
         private void ceklebtn_Click(object sender, EventArgs e)
         {
+            //veri ekleme, gösterme ve tbox içini temizliyoruz.
             Function.veriekle("calisan");
             Function.tablogetir("calisan", calisantbl);
+            cisimtbox.Clear();
+            csoyadtbox.Clear();
+            cunvantbox.Clear();
+            cteltbox.Clear();
         }
 
         private void ueklebtn_Click(object sender, EventArgs e)
         {
+            //veri ekleme, gösterme ve tbox içini temizliyoruz.
             Function.veriekle("urun");
             Function.tablogetir("urun", uruntbl);
+            uisimtbox.Clear();
+            uktgrtbox.Clear();
+            ucretbox.Clear();
+            unotbox.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -110,6 +124,8 @@ namespace OTOMASYON_SISTEMI.Forms
                 Function.verisil("masa", id);
                 Function.tablogetir("masa", masatbl);
             }
+            misimtbox.Clear();
+            mkpstbox.Clear();
         }
 
         private void csilbtn_Click(object sender, EventArgs e)
@@ -121,6 +137,10 @@ namespace OTOMASYON_SISTEMI.Forms
                 Function.verisil("calisan", id);
                 Function.tablogetir("calisan", calisantbl);
             }
+            cisimtbox.Clear();
+            csoyadtbox.Clear();
+            cunvantbox.Clear();
+            cteltbox.Clear();
         }
 
         private void usilbtn_Click(object sender, EventArgs e)
@@ -132,6 +152,10 @@ namespace OTOMASYON_SISTEMI.Forms
                 Function.verisil("urun", id);
                 Function.tablogetir("urun", uruntbl);
             }
+            uisimtbox.Clear();
+            uktgrtbox.Clear();
+            ucretbox.Clear();
+            unotbox.Clear();
         }
 
         private void masatbl_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -159,6 +183,7 @@ namespace OTOMASYON_SISTEMI.Forms
             uisimtbox.Text = uruntbl.Rows[i].Cells[1].Value.ToString();
             uktgrtbox.Text = uruntbl.Rows[i].Cells[2].Value.ToString();
             ucretbox.Text = uruntbl.Rows[i].Cells[3].Value.ToString();
+            unotbox.Text = uruntbl.Rows[i].Cells[4].Value.ToString();
         }
 
         private void mgunceltbox_Click(object sender, EventArgs e)
@@ -178,6 +203,8 @@ namespace OTOMASYON_SISTEMI.Forms
                 con.Close();
                 Function.tablogetir("masa", masatbl);
             }
+            misimtbox.Clear();
+            mkpstbox.Clear();
         }
 
         private void cgunceltbox_Click(object sender, EventArgs e)
@@ -201,6 +228,10 @@ namespace OTOMASYON_SISTEMI.Forms
                 con.Close();
                 Function.tablogetir("calisan", calisantbl);
             }
+            cisimtbox.Clear();
+            csoyadtbox.Clear();
+            cunvantbox.Clear();
+            cteltbox.Clear();
         }
 
         private void ugunceltbox_Click(object sender, EventArgs e)
@@ -211,17 +242,22 @@ namespace OTOMASYON_SISTEMI.Forms
             {
                 con.Open();
                 string guncelle = ("Update Urun_Bilgi Set urun_ismi = @urunismi,"+
-                "urun_kategorisi = @urunktgr, urun_ucreti = @urunucreti Where id = @id");
+                "urun_kategorisi = @urunktgr, urun_ucreti = @urunucreti, urun_no = @urunno Where id = @id");
                 SqlCommand cmd = new SqlCommand(guncelle, con);
                 cmd.Parameters.AddWithValue("@urunismi", uisimtbox.Text);
                 cmd.Parameters.AddWithValue("@urunktgr", uktgrtbox.Text);
                 cmd.Parameters.AddWithValue("@urunucreti", ucretbox.Text);
+                cmd.Parameters.AddWithValue("@urunno", unotbox.Text);
                 cmd.Parameters.AddWithValue("@id", Convert.ToInt32(drow.Cells[0].Value));
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Güncelleme işlemi başarılı bir şekilde gerçekleşti.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
                 Function.tablogetir("urun", uruntbl);
             }
+            uisimtbox.Clear();
+            uktgrtbox.Clear();
+            ucretbox.Clear();
+            unotbox.Clear();
         }
     }
 }

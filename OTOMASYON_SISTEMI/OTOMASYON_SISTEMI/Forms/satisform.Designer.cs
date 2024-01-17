@@ -65,6 +65,9 @@
             nakitbtn = new Button();
             kapatbtn = new Button();
             panel5 = new Panel();
+            panel8 = new Panel();
+            tplmttr = new Label();
+            label1 = new Label();
             lviewsatis = new ListView();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
@@ -92,6 +95,7 @@
             panel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             panel5.SuspendLayout();
+            panel8.SuspendLayout();
             panel6.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -169,6 +173,7 @@
             lviewmenu.BackColor = Color.LemonChiffon;
             lviewmenu.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             lviewmenu.Dock = DockStyle.Fill;
+            lviewmenu.FullRowSelect = true;
             lviewmenu.GridLines = true;
             lviewmenu.Location = new Point(3, 21);
             lviewmenu.Name = "lviewmenu";
@@ -176,6 +181,7 @@
             lviewmenu.TabIndex = 0;
             lviewmenu.UseCompatibleStateImageBehavior = false;
             lviewmenu.View = View.Details;
+            lviewmenu.DoubleClick += lviewmenu_DoubleClick;
             // 
             // columnHeader1
             // 
@@ -407,7 +413,6 @@
             satistbox.Name = "satistbox";
             satistbox.Size = new Size(232, 23);
             satistbox.TabIndex = 1;
-            satistbox.Text = "1";
             // 
             // tableLayoutPanel4
             // 
@@ -468,6 +473,7 @@
             urunbulbtn.TabIndex = 1;
             urunbulbtn.Text = "ÜRÜN\r\nBUL";
             urunbulbtn.UseVisualStyleBackColor = false;
+            urunbulbtn.Click += urunbulbtn_Click;
             // 
             // rezervbtn
             // 
@@ -523,6 +529,7 @@
             kredibtn.TabIndex = 3;
             kredibtn.Text = "KREDİ\r\nKARTI";
             kredibtn.UseVisualStyleBackColor = false;
+            kredibtn.Click += kredibtn_Click;
             // 
             // iptalbtn
             // 
@@ -550,7 +557,7 @@
             açıkbtn.TabIndex = 1;
             açıkbtn.Text = "AÇIK\r\nHESAP";
             açıkbtn.UseVisualStyleBackColor = false;
-            açıkbtn.Click += button8_Click;
+            açıkbtn.Click += açıkbtn_Click;
             // 
             // nakitbtn
             // 
@@ -564,6 +571,7 @@
             nakitbtn.TabIndex = 0;
             nakitbtn.Text = "NAKİT\r\nÖDEME";
             nakitbtn.UseVisualStyleBackColor = false;
+            nakitbtn.Click += nakitbtn_Click;
             // 
             // kapatbtn
             // 
@@ -584,6 +592,7 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
+            panel5.Controls.Add(panel8);
             panel5.Controls.Add(lviewsatis);
             panel5.Controls.Add(panel6);
             panel5.Dock = DockStyle.Fill;
@@ -592,10 +601,42 @@
             panel5.Size = new Size(317, 202);
             panel5.TabIndex = 4;
             // 
+            // panel8
+            // 
+            panel8.Controls.Add(tplmttr);
+            panel8.Controls.Add(label1);
+            panel8.Dock = DockStyle.Bottom;
+            panel8.Location = new Point(0, 170);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(317, 32);
+            panel8.TabIndex = 2;
+            // 
+            // tplmttr
+            // 
+            tplmttr.Anchor = AnchorStyles.None;
+            tplmttr.AutoSize = true;
+            tplmttr.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            tplmttr.Location = new Point(165, 8);
+            tplmttr.Name = "tplmttr";
+            tplmttr.Size = new Size(0, 19);
+            tplmttr.TabIndex = 2;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            label1.Location = new Point(3, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(172, 25);
+            label1.TabIndex = 1;
+            label1.Text = "TOPLAM TUTAR= ";
+            // 
             // lviewsatis
             // 
             lviewsatis.Columns.AddRange(new ColumnHeader[] { columnHeader4, columnHeader5, columnHeader6 });
             lviewsatis.Dock = DockStyle.Fill;
+            lviewsatis.FullRowSelect = true;
             lviewsatis.GridLines = true;
             lviewsatis.Location = new Point(0, 34);
             lviewsatis.Name = "lviewsatis";
@@ -682,6 +723,7 @@
             btnarasck.TabIndex = 7;
             btnarasck.Text = "ARA SICAK";
             btnarasck.UseVisualStyleBackColor = true;
+            btnarasck.Click += btnarasck_Click;
             // 
             // btnmkrn
             // 
@@ -696,6 +738,7 @@
             btnmkrn.TabIndex = 6;
             btnmkrn.Text = "MAKARNA";
             btnmkrn.UseVisualStyleBackColor = true;
+            btnmkrn.Click += btnmkrn_Click;
             // 
             // btncorba
             // 
@@ -710,6 +753,7 @@
             btncorba.TabIndex = 5;
             btncorba.Text = "ÇORBALAR";
             btncorba.UseVisualStyleBackColor = true;
+            btncorba.Click += btncorba_Click;
             // 
             // btnfastfood
             // 
@@ -724,6 +768,7 @@
             btnfastfood.TabIndex = 4;
             btnfastfood.Text = "FAST FOOD";
             btnfastfood.UseVisualStyleBackColor = true;
+            btnfastfood.Click += btnfastfood_Click;
             // 
             // btnyanurun
             // 
@@ -738,6 +783,7 @@
             btnyanurun.TabIndex = 3;
             btnyanurun.Text = "YAN ÜRÜNLER";
             btnyanurun.UseVisualStyleBackColor = true;
+            btnyanurun.Click += btnyanurun_Click;
             // 
             // btntatlı
             // 
@@ -752,6 +798,7 @@
             btntatlı.TabIndex = 2;
             btntatlı.Text = "TATLILAR";
             btntatlı.UseVisualStyleBackColor = true;
+            btntatlı.Click += btntatlı_Click;
             // 
             // btniçecek
             // 
@@ -766,6 +813,7 @@
             btniçecek.TabIndex = 1;
             btniçecek.Text = "İÇECEKLER";
             btniçecek.UseVisualStyleBackColor = true;
+            btniçecek.Click += btniçecek_Click;
             // 
             // btnanaymk
             // 
@@ -780,6 +828,7 @@
             btnanaymk.TabIndex = 0;
             btnanaymk.Text = "ANA YEMEK";
             btnanaymk.UseVisualStyleBackColor = true;
+            btnanaymk.Click += btnanaymk_Click;
             // 
             // satisform
             // 
@@ -806,6 +855,8 @@
             panel7.ResumeLayout(false);
             tableLayoutPanel8.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel2.ResumeLayout(false);
@@ -868,5 +919,8 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Panel panel8;
+        private Label tplmttr;
+        private Label label1;
     }
 }
