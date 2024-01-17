@@ -11,17 +11,12 @@ using System.Windows.Forms;
 //Sınıfın namespace ini yazıyoruz böylelikle kütüphaneyi eklemiş oluyoruz.
 using OTOMASYON_SISTEMI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.Sql;
-using System.Data.SqlClient;
 
 
 namespace OTOMASYON_SISTEMI
 {
     public partial class anaform : Form
     {
-        SqlConnection con;
-        SqlDataReader rdr;
-        SqlCommand cmd;
         public anaform()
         {
             InitializeComponent();

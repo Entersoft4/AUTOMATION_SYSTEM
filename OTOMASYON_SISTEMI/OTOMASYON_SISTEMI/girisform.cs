@@ -11,12 +11,12 @@ namespace OTOMASYON_SISTEMI
         {
             InitializeComponent();
         }
-
+        baglan join = new baglan();
         private void girisbtn_Click(object sender, EventArgs e)
         {
             //giris ekraninda sifre kontrolu icin veri tabanindan kontrol ediyoruz.
             string password = giristbox.Text;
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             cmd = new SqlCommand();
             con.Open();
             cmd.Connection=con;

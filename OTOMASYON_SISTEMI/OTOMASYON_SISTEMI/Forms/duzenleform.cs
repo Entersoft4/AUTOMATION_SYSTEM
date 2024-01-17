@@ -19,10 +19,11 @@ namespace OTOMASYON_SISTEMI.Forms
         SqlConnection con;
         SqlDataReader rdr;
         SqlCommand cmd;
+        baglan join = new baglan();
         public duzenleform()
         {
             InitializeComponent();
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             cmd = new SqlCommand();
         }
         //isim değişkenlerimizi tanımlıyoruz.

@@ -10,7 +10,6 @@ using OTOMASYON_SISTEMI.Forms;
 
 namespace OTOMASYON_SISTEMI
 {
-
     class Function
     {
         public static SqlConnection con;
@@ -18,8 +17,9 @@ namespace OTOMASYON_SISTEMI
         public static SqlCommand cmd;
         public static void tablogetir(string who,DataGridView tbl)
         {
+            baglan join = new baglan();
             //who ile hangi tablonun geleceğini kontrol ediyoruz.
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
                 string getir = "Select * From Masa_Bilgi";
@@ -63,9 +63,10 @@ namespace OTOMASYON_SISTEMI
         }
         public static void veriekle(string who)
         {
+            baglan join=new baglan();
             //who ile hangi tabloya veri ekleneceğini kontrol ediyoruz.
             //veri eklemede her tabloya varsayılan değerler ekliyoruz.
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
                 con.Open();
@@ -93,9 +94,10 @@ namespace OTOMASYON_SISTEMI
         }
         public static void verisil(string who, int id)
         {
+            baglan join = new baglan();
             //who ile hangi tablonun verisi silinecek kontrol ediyoruz.
             //veri silmede tabloda seçilen satıra göre silme işlemini gerçekleştiriyoruz.
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
                 con.Open();
@@ -141,9 +143,10 @@ namespace OTOMASYON_SISTEMI
         }
         public static void urungetir(ListView lv)
         {
+            baglan join=new baglan();
             //urun bilgilerini getiriyoruz.
             lv.Items.Clear();
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("Select urun_ismi, urun_ucreti, urun_no From Urun_bilgi", con);
             SqlDataReader rdr = null;
             try
@@ -176,10 +179,11 @@ namespace OTOMASYON_SISTEMI
         }
         public static void ktgrgetir(ListView lv, Button btn)
         {
+            baglan join =new baglan();
             //Kategoriye gore urun bilgilerini getiriyoruz.
             lv.Items.Clear();
             string ktgr = btn.Text;
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
             SqlDataReader rdr = null;
             try
@@ -213,9 +217,10 @@ namespace OTOMASYON_SISTEMI
         public static void urunbul(ListView lv, TextBox tbox)
         {
             //urun no suna gore urun bilgilerini getiriyoruz.
+            baglan join = new baglan();
             lv.Items.Clear();
             string uno = tbox.Text;
-            con = new SqlConnection("Data Source=DESKTOP-6BQ22BG\\SQLEXPRESS;Initial Catalog=posdb;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_no LIKE '%" + uno + "%'", con);
             SqlDataReader rdr = null;
             try
