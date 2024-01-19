@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OTOMASYON_SISTEMI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d5000af2938fc15bf9397915888c187a507b382")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f793dccb8bdc5f27f9e31cccb59c229387ca606e")]
 [assembly: System.Reflection.AssemblyProductAttribute("OTOMASYON_SISTEMI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OTOMASYON_SISTEMI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

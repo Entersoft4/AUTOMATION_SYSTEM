@@ -237,20 +237,25 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void ugunceltbox_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(join.constring);
             //veri güncelleme için seçili satırın bilgisini aldıktan sonra
-            //ilgili tbox ların textlerine eşitleyerek gümcelliyoruz.
+            //ilgili tbox ların textlerine eşitleyerek güncelliyoruz.
             foreach (DataGridViewRow drow in uruntbl.SelectedRows)
             {
                 con.Open();
                 string guncelle = ("Update Urun_Bilgi Set urun_ismi = @urunismi,"+
                 "urun_kategorisi = @urunktgr, urun_ucreti = @urunucreti, urun_no = @urunno Where id = @id");
+                string gonder = ("INSERT INTO Stok_Bilgi (urun_id, miktar, birim) VALUES (@urunid,'0','litre')");
                 SqlCommand cmd = new SqlCommand(guncelle, con);
+                SqlCommand cmd0 = new SqlCommand(gonder, con);
                 cmd.Parameters.AddWithValue("@urunismi", uisimtbox.Text);
                 cmd.Parameters.AddWithValue("@urunktgr", uktgrtbox.Text);
                 cmd.Parameters.AddWithValue("@urunucreti", ucretbox.Text);
                 cmd.Parameters.AddWithValue("@urunno", unotbox.Text);
                 cmd.Parameters.AddWithValue("@id", Convert.ToInt32(drow.Cells[0].Value));
+                cmd0.Parameters.AddWithValue("@urunid", Convert.ToInt32(drow.Cells[0].Value));
                 cmd.ExecuteNonQuery();
+                cmd0.ExecuteNonQuery();
                 MessageBox.Show("Güncelleme işlemi başarılı bir şekilde gerçekleşti.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 con.Close();
                 Function.tablogetir("urun", uruntbl);

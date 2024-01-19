@@ -31,7 +31,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            rprveritablo = new DataGridView();
             panel3 = new Panel();
             label2 = new Label();
             label3 = new Label();
@@ -45,13 +44,19 @@
             btntatlı = new Button();
             btniçecek = new Button();
             btnanaymk = new Button();
+            panel4 = new Panel();
+            lviewstok = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)rprveritablo).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,8 +90,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1536674F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.6926651F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.1536674F));
-            tableLayoutPanel2.Controls.Add(rprveritablo, 1, 1);
             tableLayoutPanel2.Controls.Add(panel3, 1, 0);
+            tableLayoutPanel2.Controls.Add(panel4, 1, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -95,15 +100,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 58.8477364F));
             tableLayoutPanel2.Size = new Size(628, 415);
             tableLayoutPanel2.TabIndex = 2;
-            // 
-            // rprveritablo
-            // 
-            rprveritablo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            rprveritablo.Dock = DockStyle.Fill;
-            rprveritablo.Location = new Point(110, 173);
-            rprveritablo.Name = "rprveritablo";
-            rprveritablo.Size = new Size(406, 239);
-            rprveritablo.TabIndex = 0;
             // 
             // panel3
             // 
@@ -279,6 +275,50 @@
             btnanaymk.TabIndex = 0;
             btnanaymk.Text = "ANA YEMEK";
             btnanaymk.UseVisualStyleBackColor = true;
+            btnanaymk.Click += btnanaymk_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(lviewstok);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(110, 173);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(406, 239);
+            panel4.TabIndex = 2;
+            // 
+            // lviewstok
+            // 
+            lviewstok.BackColor = Color.Gainsboro;
+            lviewstok.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lviewstok.Dock = DockStyle.Fill;
+            lviewstok.FullRowSelect = true;
+            lviewstok.GridLines = true;
+            lviewstok.Location = new Point(0, 0);
+            lviewstok.Name = "lviewstok";
+            lviewstok.Size = new Size(406, 239);
+            lviewstok.TabIndex = 1;
+            lviewstok.UseCompatibleStateImageBehavior = false;
+            lviewstok.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Ürün Adı";
+            columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Ürün Miktarı ";
+            columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Ürün Birimi";
+            columnHeader3.Width = 75;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Ürün Fiyatı";
+            columnHeader4.Width = 75;
             // 
             // stokform
             // 
@@ -291,11 +331,11 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)rprveritablo).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -305,7 +345,6 @@
         private Panel panel1;
         private Panel panel2;
         private TableLayoutPanel tableLayoutPanel2;
-        private DataGridView rprveritablo;
         private Panel panel3;
         private Label label2;
         private Label label3;
@@ -318,5 +357,11 @@
         private Button btntatlı;
         private Button btniçecek;
         private Button btnanaymk;
+        private Panel panel4;
+        private ListView lviewstok;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }

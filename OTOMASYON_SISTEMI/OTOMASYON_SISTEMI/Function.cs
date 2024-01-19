@@ -7,6 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
 using OTOMASYON_SISTEMI.Forms;
+using Microsoft.SqlServer.Server;
 
 namespace OTOMASYON_SISTEMI
 {
@@ -60,6 +61,16 @@ namespace OTOMASYON_SISTEMI
                 tbl.DataSource = dt;
                 con.Close();
             }
+            /*else if (who == "stok")
+            {
+                string getir = "Select * From Stok_Bilgi";
+                SqlCommand cmd = new SqlCommand(getir, con);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                tbl.DataSource = dt;
+                con.Close();
+            }*/
         }
         public static void veriekle(string who)
         {
@@ -91,6 +102,14 @@ namespace OTOMASYON_SISTEMI
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            /*else if (who == "stok")
+            {
+                con.Open();
+                string ekle = "insert into Stok_Bilgi (miktar, birim) values ('0','litre')";
+                SqlCommand cmd = new SqlCommand(ekle, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }*/
         }
         public static void verisil(string who, int id)
         {
@@ -129,6 +148,15 @@ namespace OTOMASYON_SISTEMI
             {
                 con.Open();
                 string sil = "Delete From Satis_Bilgi Where id = @id";
+                SqlCommand cmd = new SqlCommand(sil, con);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else if (who == "stok")
+            {
+                con.Open();
+                string sil = "Delete From Stok_Bilgi Where id = @id";
                 SqlCommand cmd = new SqlCommand(sil, con);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
@@ -222,6 +250,43 @@ namespace OTOMASYON_SISTEMI
             string uno = tbox.Text;
             SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_no LIKE '%" + uno + "%'", con);
+            SqlDataReader rdr = null;
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                rdr = cmd.ExecuteReader();
+                int sayac = 0;
+                while (rdr.Read())
+                {
+                    lv.Items.Add(rdr["urun_ismi"].ToString());
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_no"])));
+                    sayac++;
+                }
+            }
+            catch (Exception ex)
+            {
+                string hata = ex.Message;
+                throw;
+            }
+            finally
+            {
+                rdr.Close();
+                con.Dispose();
+                con.Close();
+            }
+        }
+        public static void stokktgrgetir(ListView lv, Button btn)
+        {
+            baglan join = new baglan();
+            //Kategoriye gore urun bilgilerini getiriyoruz.
+            lv.Items.Clear();
+            string ktgr = btn.Text;
+            SqlConnection con = new SqlConnection(join.constring);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
             SqlDataReader rdr = null;
             try
             {
