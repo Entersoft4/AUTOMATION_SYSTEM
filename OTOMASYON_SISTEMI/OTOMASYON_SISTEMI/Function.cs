@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using OTOMASYON_SISTEMI.Forms;
 using Microsoft.SqlServer.Server;
+using System.Windows.Forms;
 
 namespace OTOMASYON_SISTEMI
 {
@@ -282,11 +283,13 @@ namespace OTOMASYON_SISTEMI
         public static void stokktgrgetir(ListView lv, Button btn)
         {
             baglan join = new baglan();
-            //Kategoriye gore urun bilgilerini getiriyoruz.
+            //Kategoriye gore urunun stok bilgilerini getiriyoruz.
             lv.Items.Clear();
             string ktgr = btn.Text;
             SqlConnection con = new SqlConnection(join.constring);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
+            SqlCommand cmd = new SqlCommand("Select Stok_Bilgi.id, urun_ismi, Stok_Bilgi.miktar, " +
+            "Stok_Bilgi.birim, urun_ucreti From posdb.dbo.Urun_Bilgi Join posdb.dbo.Stok_Bilgi " +
+            "on Urun_Bilgi.id = Stok_Bilgi.urun_id WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
             SqlDataReader rdr = null;
             try
             {
@@ -299,8 +302,9 @@ namespace OTOMASYON_SISTEMI
                 while (rdr.Read())
                 {
                     lv.Items.Add(rdr["urun_ismi"].ToString());
-                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_ucreti"])));
-                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["urun_no"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(Convert.ToDecimal(rdr["miktar"])));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(rdr["birim"]));
+                    lv.Items[sayac].SubItems.Add(Convert.ToString(rdr["urun_ucreti"]));
                     sayac++;
                 }
             }

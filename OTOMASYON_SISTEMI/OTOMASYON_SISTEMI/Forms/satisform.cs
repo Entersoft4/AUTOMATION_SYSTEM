@@ -14,6 +14,8 @@ namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class satisform : Form
     {
+        public decimal nakit, kart, açık;
+        //SELECT SUM (gelir) from kasa = tutarı tek tabloya göndersin lbox oradan çeksin.
         public satisform()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void satisform_Load(object sender, EventArgs e)
         {
-            //diğer formdaki isim değikenini burada kullanıyoruz.
+            //diğer formdaki isim değiskenini burada kullanıyoruz.
             label2.Text = "#" + masaform.isim;
             Function.urungetir(lviewmenu);
             lviewsatis.MultiSelect = false;
@@ -42,6 +44,7 @@ namespace OTOMASYON_SISTEMI.Forms
         {
             //tbox içini temizler.
             satistbox.Clear();
+            Function.urungetir(lviewmenu);
         }
         //Hesap işlemleri için buton click olaylarını ayarlıyoruz.
         private void btn1_Click(object sender, EventArgs e)
@@ -200,7 +203,7 @@ namespace OTOMASYON_SISTEMI.Forms
                 tplmttr.Text = kasa;
             }
         }
-        public static decimal nakit, kart, açık;
+
         private void nakitbtn_Click(object sender, EventArgs e)
         {
             //ödeme çeşidine göre hesap kapatma ve kasaya ekleme işlemlerini yapıyoruz.
@@ -208,8 +211,7 @@ namespace OTOMASYON_SISTEMI.Forms
             {
                 MessageBox.Show("Hesap başarılı bir şekilde alındı.", "TAMAMLANDI", MessageBoxButtons.OK);
                 nakit = Convert.ToDecimal(tplmttr.Text);
-                //kasaform chest = new kasaform();
-                //chest.chestlbox.Items.Add(nakit.ToString());
+                
             }
             else
             {

@@ -34,6 +34,12 @@
             panel3 = new Panel();
             label2 = new Label();
             label3 = new Label();
+            panel4 = new Panel();
+            lviewstok = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             panel2 = new Panel();
             groupBox1 = new GroupBox();
             btnarasck = new Button();
@@ -44,19 +50,13 @@
             btntatlı = new Button();
             btniçecek = new Button();
             btnanaymk = new Button();
-            panel4 = new Panel();
-            lviewstok = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            columnHeader4 = new ColumnHeader();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel4.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
-            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -134,149 +134,6 @@
             label3.TabIndex = 0;
             label3.Text = "FastenPOS";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(groupBox1);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(3, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(200, 415);
-            panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint_1;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnarasck);
-            groupBox1.Controls.Add(btnmkrn);
-            groupBox1.Controls.Add(btncorba);
-            groupBox1.Controls.Add(btnfastfood);
-            groupBox1.Controls.Add(btnyanurun);
-            groupBox1.Controls.Add(btntatlı);
-            groupBox1.Controls.Add(btniçecek);
-            groupBox1.Controls.Add(btnanaymk);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 415);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "KATEGORİLER";
-            // 
-            // btnarasck
-            // 
-            btnarasck.Cursor = Cursors.Hand;
-            btnarasck.Dock = DockStyle.Top;
-            btnarasck.FlatAppearance.BorderColor = Color.Black;
-            btnarasck.FlatStyle = FlatStyle.Flat;
-            btnarasck.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnarasck.Location = new Point(3, 361);
-            btnarasck.Name = "btnarasck";
-            btnarasck.Size = new Size(194, 47);
-            btnarasck.TabIndex = 7;
-            btnarasck.Text = "ARA SICAK";
-            btnarasck.UseVisualStyleBackColor = true;
-            // 
-            // btnmkrn
-            // 
-            btnmkrn.Cursor = Cursors.Hand;
-            btnmkrn.Dock = DockStyle.Top;
-            btnmkrn.FlatAppearance.BorderColor = Color.Black;
-            btnmkrn.FlatStyle = FlatStyle.Flat;
-            btnmkrn.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnmkrn.Location = new Point(3, 314);
-            btnmkrn.Name = "btnmkrn";
-            btnmkrn.Size = new Size(194, 47);
-            btnmkrn.TabIndex = 6;
-            btnmkrn.Text = "MAKARNA";
-            btnmkrn.UseVisualStyleBackColor = true;
-            // 
-            // btncorba
-            // 
-            btncorba.Cursor = Cursors.Hand;
-            btncorba.Dock = DockStyle.Top;
-            btncorba.FlatAppearance.BorderColor = Color.Black;
-            btncorba.FlatStyle = FlatStyle.Flat;
-            btncorba.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btncorba.Location = new Point(3, 267);
-            btncorba.Name = "btncorba";
-            btncorba.Size = new Size(194, 47);
-            btncorba.TabIndex = 5;
-            btncorba.Text = "ÇORBALAR";
-            btncorba.UseVisualStyleBackColor = true;
-            // 
-            // btnfastfood
-            // 
-            btnfastfood.Cursor = Cursors.Hand;
-            btnfastfood.Dock = DockStyle.Top;
-            btnfastfood.FlatAppearance.BorderColor = Color.Black;
-            btnfastfood.FlatStyle = FlatStyle.Flat;
-            btnfastfood.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnfastfood.Location = new Point(3, 220);
-            btnfastfood.Name = "btnfastfood";
-            btnfastfood.Size = new Size(194, 47);
-            btnfastfood.TabIndex = 4;
-            btnfastfood.Text = "FAST FOOD";
-            btnfastfood.UseVisualStyleBackColor = true;
-            // 
-            // btnyanurun
-            // 
-            btnyanurun.Cursor = Cursors.Hand;
-            btnyanurun.Dock = DockStyle.Top;
-            btnyanurun.FlatAppearance.BorderColor = Color.Black;
-            btnyanurun.FlatStyle = FlatStyle.Flat;
-            btnyanurun.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnyanurun.Location = new Point(3, 173);
-            btnyanurun.Name = "btnyanurun";
-            btnyanurun.Size = new Size(194, 47);
-            btnyanurun.TabIndex = 3;
-            btnyanurun.Text = "YAN ÜRÜNLER";
-            btnyanurun.UseVisualStyleBackColor = true;
-            // 
-            // btntatlı
-            // 
-            btntatlı.Cursor = Cursors.Hand;
-            btntatlı.Dock = DockStyle.Top;
-            btntatlı.FlatAppearance.BorderColor = Color.Black;
-            btntatlı.FlatStyle = FlatStyle.Flat;
-            btntatlı.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btntatlı.Location = new Point(3, 126);
-            btntatlı.Name = "btntatlı";
-            btntatlı.Size = new Size(194, 47);
-            btntatlı.TabIndex = 2;
-            btntatlı.Text = "TATLILAR";
-            btntatlı.UseVisualStyleBackColor = true;
-            // 
-            // btniçecek
-            // 
-            btniçecek.Cursor = Cursors.Hand;
-            btniçecek.Dock = DockStyle.Top;
-            btniçecek.FlatAppearance.BorderColor = Color.Black;
-            btniçecek.FlatStyle = FlatStyle.Flat;
-            btniçecek.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btniçecek.Location = new Point(3, 79);
-            btniçecek.Name = "btniçecek";
-            btniçecek.Size = new Size(194, 47);
-            btniçecek.TabIndex = 1;
-            btniçecek.Text = "İÇECEKLER";
-            btniçecek.UseVisualStyleBackColor = true;
-            // 
-            // btnanaymk
-            // 
-            btnanaymk.Cursor = Cursors.Hand;
-            btnanaymk.Dock = DockStyle.Top;
-            btnanaymk.FlatAppearance.BorderColor = Color.Black;
-            btnanaymk.FlatStyle = FlatStyle.Flat;
-            btnanaymk.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnanaymk.Location = new Point(3, 32);
-            btnanaymk.Name = "btnanaymk";
-            btnanaymk.Size = new Size(194, 47);
-            btnanaymk.TabIndex = 0;
-            btnanaymk.Text = "ANA YEMEK";
-            btnanaymk.UseVisualStyleBackColor = true;
-            btnanaymk.Click += btnanaymk_Click;
-            // 
             // panel4
             // 
             panel4.Controls.Add(lviewstok);
@@ -320,6 +177,156 @@
             columnHeader4.Text = "Ürün Fiyatı";
             columnHeader4.Width = 75;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(groupBox1);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 415);
+            panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint_1;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnarasck);
+            groupBox1.Controls.Add(btnmkrn);
+            groupBox1.Controls.Add(btncorba);
+            groupBox1.Controls.Add(btnfastfood);
+            groupBox1.Controls.Add(btnyanurun);
+            groupBox1.Controls.Add(btntatlı);
+            groupBox1.Controls.Add(btniçecek);
+            groupBox1.Controls.Add(btnanaymk);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            groupBox1.ForeColor = Color.Black;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(200, 415);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "KATEGORİLER";
+            // 
+            // btnarasck
+            // 
+            btnarasck.Cursor = Cursors.Hand;
+            btnarasck.Dock = DockStyle.Top;
+            btnarasck.FlatAppearance.BorderColor = Color.Black;
+            btnarasck.FlatStyle = FlatStyle.Flat;
+            btnarasck.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnarasck.Location = new Point(3, 361);
+            btnarasck.Name = "btnarasck";
+            btnarasck.Size = new Size(194, 47);
+            btnarasck.TabIndex = 7;
+            btnarasck.Text = "ARA SICAK";
+            btnarasck.UseVisualStyleBackColor = true;
+            btnarasck.Click += btnarasck_Click;
+            // 
+            // btnmkrn
+            // 
+            btnmkrn.Cursor = Cursors.Hand;
+            btnmkrn.Dock = DockStyle.Top;
+            btnmkrn.FlatAppearance.BorderColor = Color.Black;
+            btnmkrn.FlatStyle = FlatStyle.Flat;
+            btnmkrn.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnmkrn.Location = new Point(3, 314);
+            btnmkrn.Name = "btnmkrn";
+            btnmkrn.Size = new Size(194, 47);
+            btnmkrn.TabIndex = 6;
+            btnmkrn.Text = "MAKARNA";
+            btnmkrn.UseVisualStyleBackColor = true;
+            btnmkrn.Click += btnmkrn_Click;
+            // 
+            // btncorba
+            // 
+            btncorba.Cursor = Cursors.Hand;
+            btncorba.Dock = DockStyle.Top;
+            btncorba.FlatAppearance.BorderColor = Color.Black;
+            btncorba.FlatStyle = FlatStyle.Flat;
+            btncorba.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btncorba.Location = new Point(3, 267);
+            btncorba.Name = "btncorba";
+            btncorba.Size = new Size(194, 47);
+            btncorba.TabIndex = 5;
+            btncorba.Text = "ÇORBALAR";
+            btncorba.UseVisualStyleBackColor = true;
+            btncorba.Click += btncorba_Click;
+            // 
+            // btnfastfood
+            // 
+            btnfastfood.Cursor = Cursors.Hand;
+            btnfastfood.Dock = DockStyle.Top;
+            btnfastfood.FlatAppearance.BorderColor = Color.Black;
+            btnfastfood.FlatStyle = FlatStyle.Flat;
+            btnfastfood.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnfastfood.Location = new Point(3, 220);
+            btnfastfood.Name = "btnfastfood";
+            btnfastfood.Size = new Size(194, 47);
+            btnfastfood.TabIndex = 4;
+            btnfastfood.Text = "FAST FOOD";
+            btnfastfood.UseVisualStyleBackColor = true;
+            btnfastfood.Click += btnfastfood_Click;
+            // 
+            // btnyanurun
+            // 
+            btnyanurun.Cursor = Cursors.Hand;
+            btnyanurun.Dock = DockStyle.Top;
+            btnyanurun.FlatAppearance.BorderColor = Color.Black;
+            btnyanurun.FlatStyle = FlatStyle.Flat;
+            btnyanurun.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnyanurun.Location = new Point(3, 173);
+            btnyanurun.Name = "btnyanurun";
+            btnyanurun.Size = new Size(194, 47);
+            btnyanurun.TabIndex = 3;
+            btnyanurun.Text = "YAN ÜRÜNLER";
+            btnyanurun.UseVisualStyleBackColor = true;
+            btnyanurun.Click += btnyanurun_Click;
+            // 
+            // btntatlı
+            // 
+            btntatlı.Cursor = Cursors.Hand;
+            btntatlı.Dock = DockStyle.Top;
+            btntatlı.FlatAppearance.BorderColor = Color.Black;
+            btntatlı.FlatStyle = FlatStyle.Flat;
+            btntatlı.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btntatlı.Location = new Point(3, 126);
+            btntatlı.Name = "btntatlı";
+            btntatlı.Size = new Size(194, 47);
+            btntatlı.TabIndex = 2;
+            btntatlı.Text = "TATLILAR";
+            btntatlı.UseVisualStyleBackColor = true;
+            btntatlı.Click += btntatlı_Click;
+            // 
+            // btniçecek
+            // 
+            btniçecek.Cursor = Cursors.Hand;
+            btniçecek.Dock = DockStyle.Top;
+            btniçecek.FlatAppearance.BorderColor = Color.Black;
+            btniçecek.FlatStyle = FlatStyle.Flat;
+            btniçecek.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btniçecek.Location = new Point(3, 79);
+            btniçecek.Name = "btniçecek";
+            btniçecek.Size = new Size(194, 47);
+            btniçecek.TabIndex = 1;
+            btniçecek.Text = "İÇECEKLER";
+            btniçecek.UseVisualStyleBackColor = true;
+            btniçecek.Click += btniçecek_Click;
+            // 
+            // btnanaymk
+            // 
+            btnanaymk.Cursor = Cursors.Hand;
+            btnanaymk.Dock = DockStyle.Top;
+            btnanaymk.FlatAppearance.BorderColor = Color.Black;
+            btnanaymk.FlatStyle = FlatStyle.Flat;
+            btnanaymk.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnanaymk.Location = new Point(3, 32);
+            btnanaymk.Name = "btnanaymk";
+            btnanaymk.Size = new Size(194, 47);
+            btnanaymk.TabIndex = 0;
+            btnanaymk.Text = "ANA YEMEK";
+            btnanaymk.UseVisualStyleBackColor = true;
+            btnanaymk.Click += btnanaymk_Click;
+            // 
             // stokform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -328,14 +335,15 @@
             Controls.Add(tableLayoutPanel1);
             Name = "stokform";
             Text = "stokform";
+            Load += stokform_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel4.ResumeLayout(false);
             panel2.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
