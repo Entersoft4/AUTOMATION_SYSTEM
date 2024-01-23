@@ -115,7 +115,6 @@
             Name = "girisform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FastenPOS";
-            Load += girisform_Load;
             ResumeLayout(false);
             PerformLayout();
         }

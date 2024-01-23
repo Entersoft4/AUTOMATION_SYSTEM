@@ -71,7 +71,6 @@
             ustpnl.Name = "ustpnl";
             ustpnl.Size = new Size(846, 50);
             ustpnl.TabIndex = 0;
-            ustpnl.Paint += ustpnl_Paint;
             // 
             // tableLayoutPanel1
             // 
@@ -133,7 +132,6 @@
             logopbox.SizeMode = PictureBoxSizeMode.Zoom;
             logopbox.TabIndex = 0;
             logopbox.TabStop = false;
-            logopbox.Click += pictureBox1_Click;
             // 
             // altpnl
             // 
@@ -255,7 +253,6 @@
             anapnl.Name = "anapnl";
             anapnl.Size = new Size(846, 283);
             anapnl.TabIndex = 3;
-            anapnl.Paint += panel1_Paint;
             // 
             // timer1
             // 

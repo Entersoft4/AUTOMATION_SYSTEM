@@ -144,7 +144,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Size = new Size(645, 416);
             tableLayoutPanel2.TabIndex = 0;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint_1;
             // 
             // panel3
             // 
@@ -842,7 +841,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "satisform";
             Load += satisform_Load;
-            Shown += satisform_Shown;
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);

@@ -101,7 +101,6 @@
             panel11.Name = "panel11";
             panel11.Size = new Size(330, 99);
             panel11.TabIndex = 0;
-            panel11.Paint += panel11_Paint;
             // 
             // yenilebtn
             // 

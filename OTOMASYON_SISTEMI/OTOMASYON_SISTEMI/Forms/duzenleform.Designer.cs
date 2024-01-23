@@ -50,6 +50,8 @@
             usilbtn = new Button();
             label16 = new Label();
             panel13 = new Panel();
+            unotbox = new TextBox();
+            label20 = new Label();
             ucretbox = new TextBox();
             label19 = new Label();
             ugunceltbox = new Button();
@@ -94,8 +96,6 @@
             label6 = new Label();
             label5 = new Label();
             edittabc = new TabControl();
-            unotbox = new TextBox();
-            label20 = new Label();
             panel4.SuspendLayout();
             panel6.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -134,9 +134,8 @@
             panel4.Location = new Point(5, 5);
             panel4.Margin = new Padding(5);
             panel4.Name = "panel4";
-            panel4.Size = new Size(56, 380);
+            panel4.Size = new Size(56, 90);
             panel4.TabIndex = 3;
-            panel4.Paint += panel1_Paint;
             // 
             // button1
             // 
@@ -176,7 +175,6 @@
             label8.Size = new Size(42, 21);
             label8.TabIndex = 1;
             label8.Text = "Ekle";
-            label8.Click += label1_Click_1;
             // 
             // panel6
             // 
@@ -230,7 +228,6 @@
             label10.Size = new Size(29, 21);
             label10.TabIndex = 1;
             label10.Text = "Sil";
-            label10.Click += label2_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -242,6 +239,7 @@
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(200, 100);
             tableLayoutPanel2.TabIndex = 0;
             // 
@@ -255,7 +253,6 @@
             URUN.TabIndex = 2;
             URUN.Text = "ÜRÜN";
             URUN.UseVisualStyleBackColor = true;
-            URUN.Click += tabPage3_Click;
             // 
             // tableLayoutPanel6
             // 
@@ -387,6 +384,25 @@
             panel13.Size = new Size(318, 184);
             panel13.TabIndex = 2;
             // 
+            // unotbox
+            // 
+            unotbox.Anchor = AnchorStyles.None;
+            unotbox.Location = new Point(230, 69);
+            unotbox.Name = "unotbox";
+            unotbox.Size = new Size(60, 23);
+            unotbox.TabIndex = 29;
+            // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.None;
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label20.Location = new Point(163, 70);
+            label20.Name = "label20";
+            label20.Size = new Size(69, 19);
+            label20.TabIndex = 28;
+            label20.Text = "Ürün no:";
+            // 
             // ucretbox
             // 
             ucretbox.Anchor = AnchorStyles.None;
@@ -468,7 +484,6 @@
             CALISAN.TabIndex = 1;
             CALISAN.Text = "ÇALIŞAN";
             CALISAN.UseVisualStyleBackColor = true;
-            CALISAN.Click += CALISAN_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -701,7 +716,6 @@
             MASA.TabIndex = 0;
             MASA.Text = "MASA";
             MASA.UseVisualStyleBackColor = true;
-            MASA.Click += MASA_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -892,25 +906,6 @@
             edittabc.SelectedIndex = 0;
             edittabc.Size = new Size(846, 424);
             edittabc.TabIndex = 1;
-            // 
-            // unotbox
-            // 
-            unotbox.Anchor = AnchorStyles.None;
-            unotbox.Location = new Point(230, 69);
-            unotbox.Name = "unotbox";
-            unotbox.Size = new Size(60, 23);
-            unotbox.TabIndex = 29;
-            // 
-            // label20
-            // 
-            label20.Anchor = AnchorStyles.None;
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label20.Location = new Point(163, 70);
-            label20.Name = "label20";
-            label20.Size = new Size(69, 19);
-            label20.TabIndex = 28;
-            label20.Text = "Ürün no:";
             // 
             // duzenleform
             // 

@@ -45,7 +45,6 @@ namespace OTOMASYON_SISTEMI
         stokform stock = new stokform();
         kasaform chest = new kasaform();
         ayarlarform settings = new ayarlarform();
-
         private void anaform_FormClosing(object sender, FormClosingEventArgs e)
         {
             //uygulamayı sonlandırıyor.
@@ -59,15 +58,6 @@ namespace OTOMASYON_SISTEMI
             formgetir(menu);
         }
 
-        private void ustpnl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
         //alt menüdeki butonlara tıklandığında form getirme olaylarını yazıyoruz.
         private void anastok_Click(object sender, EventArgs e)
         {
@@ -115,11 +105,6 @@ namespace OTOMASYON_SISTEMI
             anasaat.Text = DateTime.Now.ToLongTimeString();
             //anlık tarih
             anatarih.Text = DateTime.Now.ToLongDateString();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

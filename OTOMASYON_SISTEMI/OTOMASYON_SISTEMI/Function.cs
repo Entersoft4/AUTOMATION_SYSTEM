@@ -14,13 +14,10 @@ namespace OTOMASYON_SISTEMI
 {
     class Function
     {
-        public static SqlConnection con;
-        public static SqlDataReader rdr;
-        public static SqlCommand cmd;
         public static void tablogetir(string who,DataGridView tbl)
         {
-            baglan join = new baglan();
             //who ile hangi tablonun geleceğini kontrol ediyoruz.
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
@@ -62,22 +59,32 @@ namespace OTOMASYON_SISTEMI
                 tbl.DataSource = dt;
                 con.Close();
             }
-            /*else if (who == "stok")
+            else if (who == "kasa")
             {
-                string getir = "Select * From Stok_Bilgi";
+                string getir = "Select * From Kasa_Bilgi";
                 SqlCommand cmd = new SqlCommand(getir, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 tbl.DataSource = dt;
                 con.Close();
-            }*/
+            }
+            else if (who == "siparis")
+            {
+                string getir = "Select * From Siparis_Bilgi";
+                SqlCommand cmd = new SqlCommand(getir, con);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                tbl.DataSource = dt;
+                con.Close();
+            }
         }
         public static void veriekle(string who)
         {
-            baglan join=new baglan();
             //who ile hangi tabloya veri ekleneceğini kontrol ediyoruz.
             //veri eklemede her tabloya varsayılan değerler ekliyoruz.
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
@@ -103,20 +110,12 @@ namespace OTOMASYON_SISTEMI
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
-            /*else if (who == "stok")
-            {
-                con.Open();
-                string ekle = "insert into Stok_Bilgi (miktar, birim) values ('0','litre')";
-                SqlCommand cmd = new SqlCommand(ekle, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }*/
         }
         public static void verisil(string who, int id)
         {
-            baglan join = new baglan();
             //who ile hangi tablonun verisi silinecek kontrol ediyoruz.
             //veri silmede tabloda seçilen satıra göre silme işlemini gerçekleştiriyoruz.
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             if (who=="masa")
             {
@@ -172,9 +171,9 @@ namespace OTOMASYON_SISTEMI
         }
         public static void urungetir(ListView lv)
         {
-            baglan join=new baglan();
             //urun bilgilerini getiriyoruz.
             lv.Items.Clear();
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("Select urun_ismi, urun_ucreti, urun_no From Urun_bilgi", con);
             SqlDataReader rdr = null;
@@ -208,10 +207,10 @@ namespace OTOMASYON_SISTEMI
         }
         public static void ktgrgetir(ListView lv, Button btn)
         {
-            baglan join =new baglan();
             //Kategoriye gore urun bilgilerini getiriyoruz.
             lv.Items.Clear();
             string ktgr = btn.Text;
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("SELECT * FROM Urun_Bilgi WHERE urun_kategorisi LIKE '%" + ktgr + "%'", con);
             SqlDataReader rdr = null;
@@ -282,10 +281,10 @@ namespace OTOMASYON_SISTEMI
         }
         public static void stokktgrgetir(ListView lv, Button btn)
         {
-            baglan join = new baglan();
             //Kategoriye gore urunun stok bilgilerini getiriyoruz.
             lv.Items.Clear();
             string ktgr = btn.Text;
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("Select Stok_Bilgi.id, urun_ismi, Stok_Bilgi.miktar, " +
             "Stok_Bilgi.birim, urun_ucreti From posdb.dbo.Urun_Bilgi Join posdb.dbo.Stok_Bilgi " +
@@ -319,6 +318,20 @@ namespace OTOMASYON_SISTEMI
                 con.Dispose();
                 con.Close();
             }
+        }
+        public static void raporgetir(string ad, DataGridView tbl)
+        {
+            //basılan butona göre rapor bilgisini getiriyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
+            string getir = "Select * From "+ad+"";
+            SqlCommand cmd = new SqlCommand(getir, con);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            dt.Clear();
+            adapter.Fill(dt);
+            tbl.DataSource = dt;
+            con.Close();
         }
     }
 }

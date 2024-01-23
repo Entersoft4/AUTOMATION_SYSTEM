@@ -16,10 +16,12 @@ namespace OTOMASYON_SISTEMI.Forms
         {
             InitializeComponent();
         }
+        //Diger forma veri gondermeye yarayan tenımlama şeklidir.
         public static string isim;
         satisform sales = new satisform();
         public void frmgtr(Button btn)
         {
+            //Formu getirir, kapatıldıysa yeni bir tane oluşturmaya yarar.
             isim = btn.Text;
             if (sales.IsDisposed)
             {
@@ -29,7 +31,9 @@ namespace OTOMASYON_SISTEMI.Forms
             sales.Size = new Size(1257, 556);
             sales.Show();
         }
+        //Form getir fonksiyonlarini masaların click olayına yaziyoruz.
 
+        //
         private void masa1_Click(object sender, EventArgs e)
         {
             frmgtr(masa1);
@@ -154,5 +158,8 @@ namespace OTOMASYON_SISTEMI.Forms
         {
             frmgtr(masa25);
         }
+        //Buraya kadar masaların içine fonksiyonlarimizi yaziyoruz.
+
+        //
     }
 }

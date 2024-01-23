@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using OTOMASYON_SISTEMI;
+using System.Data.SqlClient;
 
 namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class satisform : Form
     {
-        public decimal nakit, kart, açık;
-        //SELECT SUM (gelir) from kasa = tutarı tek tabloya göndersin lbox oradan çeksin.
         public satisform()
         {
             InitializeComponent();
@@ -31,13 +30,34 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void kapatbtn_Click(object sender, EventArgs e)
         {
+            //bütün sipariş bilgilerini göndermek üzere ayarliyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
+            con.Open();
+            int sum = 0;
+            if (lviewsatis.Items.Count > 0)
+            {
+                for (int i = 0; i < lviewsatis.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32(lviewsatis.Items[0].Text);
+                }
+            }
+            //Sipariş için masa isminin bilgisini gonderiyoruz.
+            string sorgu = ("INSERT INTO Siparis_Bilgi (masa_ismi,adet,fiyat) " +
+            "VALUES (@masaismi,@adet,@fiyat)");
+            SqlCommand cmd = new SqlCommand(sorgu, con);
+            cmd.Parameters.AddWithValue("@masaismi", label2.Text);
+            //Sipariş için adet bilgisini gonderiyoruz.
+            cmd.Parameters.AddWithValue("@adet", sum);
+            //Sipariş için fiyat bilgisini gonderiyoruz.;
+            if (tplmttr.Text!="")
+            {
+                cmd.Parameters.AddWithValue("@fiyat", Convert.ToDecimal(tplmttr.Text));
+                cmd.ExecuteNonQuery();
+            }
+            con.Close();
             //bu sayfayı kapat.
             this.Close();
-        }
-
-        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void clearbtn_Click(object sender, EventArgs e)
@@ -47,6 +67,8 @@ namespace OTOMASYON_SISTEMI.Forms
             Function.urungetir(lviewmenu);
         }
         //Hesap işlemleri için buton click olaylarını ayarlıyoruz.
+
+        //
         private void btn1_Click(object sender, EventArgs e)
         {
             satistbox.Text += "1";
@@ -109,10 +131,6 @@ namespace OTOMASYON_SISTEMI.Forms
         //buraya kadar hesap işlemlerini yazıyoruz.
 
         //
-        private void satisform_Shown(object sender, EventArgs e)
-        {
-            label2.Text = "#" + masaform.isim;
-        }
         decimal eksilt = 0, tmp1;
         string kasa = "";
         private void iptalbtn_Click(object sender, EventArgs e)
@@ -136,6 +154,8 @@ namespace OTOMASYON_SISTEMI.Forms
             }
         }
         //Kategoriye göre veri getirme işlemlerini fonksiyon ile çağırıyoruz.
+
+        //
         private void btnanaymk_Click(object sender, EventArgs e)
         {
             Function.ktgrgetir(lviewmenu, btnanaymk);
@@ -203,15 +223,45 @@ namespace OTOMASYON_SISTEMI.Forms
                 tplmttr.Text = kasa;
             }
         }
-
+        public decimal nakit;
+        public decimal kart;
+        public decimal açık;
         private void nakitbtn_Click(object sender, EventArgs e)
         {
             //ödeme çeşidine göre hesap kapatma ve kasaya ekleme işlemlerini yapıyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             if (MessageBox.Show("Ödemeniz gereken tutar= " + tplmttr.Text, "HESAP", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 MessageBox.Show("Hesap başarılı bir şekilde alındı.", "TAMAMLANDI", MessageBoxButtons.OK);
                 nakit = Convert.ToDecimal(tplmttr.Text);
-                
+                con.Open();
+                // Mevcut değeri almak için SQL sorgusu
+                string bak = "SELECT gelir FROM Kasa_Bilgi WHERE id = 1";
+                using (SqlCommand cmd = new SqlCommand(bak, con))
+                {
+                    // SqlDataReader ile sorgudan dönen veriyi okuyoruz
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            // Mevcut değeri alıyoruz
+                            decimal eski = Convert.ToDecimal((rdr["gelir"]));
+                            decimal yeni = Convert.ToDecimal(eski + nakit);
+                            rdr.Close();
+                            // INSERT için SQL sorgusu
+                            string ekle = "Update Kasa_Bilgi Set gelir = @gelir Where id = 1";
+                            using (SqlCommand cmd0 = new SqlCommand(ekle, con))
+                            {
+                                // Parametreyi ekleyin
+                                cmd0.Parameters.AddWithValue("@gelir", yeni);
+                                // INSERT sorgusunu çalıştırın
+                                cmd0.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                con.Close();
             }
             else
             {
@@ -228,12 +278,39 @@ namespace OTOMASYON_SISTEMI.Forms
         private void kredibtn_Click(object sender, EventArgs e)
         {
             //ödeme çeşidine göre hesap kapatma ve kasaya ekleme işlemlerini yapıyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             if (MessageBox.Show("Ödemeniz gereken tutar= " + tplmttr.Text, "HESAP", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 MessageBox.Show("Hesap başarılı bir şekilde alındı.", "TAMAMLANDI", MessageBoxButtons.OK);
-                kart = Convert.ToDecimal(tplmttr.Text);
-                //kasaform chest = new kasaform();
-                //chest.chestlbox.Items.Add(kart.ToString());
+                nakit = Convert.ToDecimal(tplmttr.Text);
+                con.Open();
+                // Mevcut değeri almak için SQL sorgusu
+                string bak = "SELECT gelir FROM Kasa_Bilgi WHERE id = 2";
+                using (SqlCommand cmd = new SqlCommand(bak, con))
+                {
+                    // SqlDataReader ile sorgudan dönen veriyi okuyoruz
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            // Mevcut değeri alıyoruz
+                            decimal eski = Convert.ToDecimal((rdr["gelir"]));
+                            decimal yeni = Convert.ToDecimal(eski + nakit);
+                            rdr.Close();
+                            // INSERT için SQL sorgusu
+                            string ekle = "Update Kasa_Bilgi Set gelir = @gelir Where id = 2";
+                            using (SqlCommand cmd0 = new SqlCommand(ekle, con))
+                            {
+                                // Parametreyi ekleyin
+                                cmd0.Parameters.AddWithValue("@gelir", yeni);
+                                // INSERT sorgusunu çalıştırın
+                                cmd0.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                con.Close();
             }
             else
             {
@@ -244,17 +321,44 @@ namespace OTOMASYON_SISTEMI.Forms
         private void açıkbtn_Click(object sender, EventArgs e)
         {
             //ödeme çeşidine göre hesap kapatma ve kasaya ekleme işlemlerini yapıyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             if (MessageBox.Show("Ödemeniz gereken tutar= " + tplmttr.Text, "HESAP", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 MessageBox.Show("Hesap başarılı bir şekilde alındı.", "TAMAMLANDI", MessageBoxButtons.OK);
-                açık = Convert.ToDecimal(tplmttr.Text);
-                //kasaform chest = new kasaform();
-                //chest.chestlbox.Items.Add(açık.ToString());
+                nakit = Convert.ToDecimal(tplmttr.Text);
+                con.Open();
+                // Mevcut değeri almak için SQL sorgusu
+                string bak = "SELECT gelir FROM Kasa_Bilgi WHERE id = 3";
+                using (SqlCommand cmd = new SqlCommand(bak, con))
+                {
+                    // SqlDataReader ile sorgudan dönen veriyi okuyoruz
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            // Mevcut değeri alıyoruz
+                            decimal eski = Convert.ToDecimal((rdr["gelir"]));
+                            decimal yeni = Convert.ToDecimal(eski + nakit);
+                            rdr.Close();
+                            // INSERT için SQL sorgusu
+                            string ekle = "Update Kasa_Bilgi Set gelir = @gelir Where id = 3";
+                            using (SqlCommand cmd0 = new SqlCommand(ekle, con))
+                            {
+                                // Parametreyi ekleyin
+                                cmd0.Parameters.AddWithValue("@gelir", yeni);
+                                // INSERT sorgusunu çalıştırın
+                                cmd0.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                con.Close();
             }
             else
             {
                 MessageBox.Show("Hesap işlemi iptal edildi. ", "İPTAL EDİLDİ", MessageBoxButtons.OK);
             }
-        }
+        }   
     }
 }

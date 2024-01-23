@@ -13,21 +13,12 @@ namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class ayarlarform : Form
     {
-        SqlConnection con;
-        SqlDataReader rdr;
-        SqlCommand cmd;
         baglan join = new baglan();
         public ayarlarform()
         {
             InitializeComponent();
             SqlConnection con = new SqlConnection(join.constring);
-            cmd = new SqlCommand();
-            /*
-             DataTable gelirtable = GetgelirtipData();
-             cmb_gider_tipi.DataSource = gelirtable;
-             cmb_gider_tipi.DisplayMember = "gelirad";
-             cmb_gider_tipi.ValueMember = "gelirkod";
-            */
+            SqlCommand cmd = new SqlCommand();
         }
         private void stokkontrol()
         {
@@ -76,9 +67,9 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void sgunceltbox_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(join.constring);
             //veri güncelleme için seçili satırın bilgisini aldıktan sonra
             //ilgili tbox ların textlerine eşitleyerek gümcelliyoruz.
+            SqlConnection con = new SqlConnection(join.constring);
             foreach (DataGridViewRow drow in stoktbl.SelectedRows)
             {
                 con.Open();
@@ -97,13 +88,9 @@ namespace OTOMASYON_SISTEMI.Forms
             sbrmbox.Clear();
         }
 
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void yenilebtn_Click(object sender, EventArgs e)
         {
+            //Butona basildiginda güncel tabloyu getirmesi için yineliyoruz.
             stokkontrol();
         }
     }

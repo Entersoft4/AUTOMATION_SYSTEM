@@ -117,7 +117,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(202, 408);
             tableLayoutPanel2.TabIndex = 0;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint_1;
             // 
             // urunbtn
             // 
@@ -128,6 +127,7 @@
             urunbtn.TabIndex = 8;
             urunbtn.Text = "Ürün Raporu";
             urunbtn.UseVisualStyleBackColor = true;
+            urunbtn.Click += urunbtn_Click;
             // 
             // calisanbtn
             // 
@@ -138,6 +138,7 @@
             calisanbtn.TabIndex = 7;
             calisanbtn.Text = "Çalışan Raporu";
             calisanbtn.UseVisualStyleBackColor = true;
+            calisanbtn.Click += calisanbtn_Click;
             // 
             // rezervebtn
             // 
@@ -148,6 +149,7 @@
             rezervebtn.TabIndex = 6;
             rezervebtn.Text = "Rezerve Raporu";
             rezervebtn.UseVisualStyleBackColor = true;
+            rezervebtn.Click += rezervebtn_Click;
             // 
             // cesitbtn
             // 
@@ -158,6 +160,7 @@
             cesitbtn.TabIndex = 5;
             cesitbtn.Text = "Ödeme Çeşitleri";
             cesitbtn.UseVisualStyleBackColor = true;
+            cesitbtn.Click += cesitbtn_Click;
             // 
             // masabtn
             // 
@@ -168,6 +171,7 @@
             masabtn.TabIndex = 4;
             masabtn.Text = "Masa Özeti";
             masabtn.UseVisualStyleBackColor = true;
+            masabtn.Click += masabtn_Click;
             // 
             // iptalbtn
             // 
@@ -178,6 +182,7 @@
             iptalbtn.TabIndex = 3;
             iptalbtn.Text = "İptal Özeti";
             iptalbtn.UseVisualStyleBackColor = true;
+            iptalbtn.Click += iptalbtn_Click;
             // 
             // odemebtn
             // 
@@ -188,6 +193,7 @@
             odemebtn.TabIndex = 2;
             odemebtn.Text = "Ödeme Özeti";
             odemebtn.UseVisualStyleBackColor = true;
+            odemebtn.Click += odemebtn_Click;
             // 
             // teslımbtn
             // 
@@ -198,6 +204,7 @@
             teslımbtn.TabIndex = 1;
             teslımbtn.Text = "Teslim Özeti";
             teslımbtn.UseVisualStyleBackColor = true;
+            teslımbtn.Click += teslımbtn_Click;
             // 
             // gunsonbtn
             // 
@@ -208,6 +215,7 @@
             gunsonbtn.TabIndex = 0;
             gunsonbtn.Text = "Gün Sonu Raporu";
             gunsonbtn.UseVisualStyleBackColor = true;
+            gunsonbtn.Click += gunsonbtn_Click;
             // 
             // panel2
             // 

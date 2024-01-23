@@ -18,26 +18,17 @@ namespace OTOMASYON_SISTEMI.Forms
             InitializeComponent();
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnanaymk_Click(object sender, EventArgs e)
         {
+            //Kategoriye göre veri getirme işlemlerini fonksiyon ile çağırıyoruz.
             Function.stokktgrgetir(lviewstok, btnanaymk);
         }
 
         private void stokform_Load(object sender, EventArgs e)
         {
-            baglan join = new baglan();
             //urunun stok bilgilerini getiriyoruz.
             lviewstok.Items.Clear();
+            baglan join = new baglan();
             SqlConnection con = new SqlConnection(join.constring);
             SqlCommand cmd = new SqlCommand("Select Stok_Bilgi.id, urun_ismi, Stok_Bilgi.miktar, " +
             "Stok_Bilgi.birim, urun_ucreti From posdb.dbo.Urun_Bilgi Join posdb.dbo.Stok_Bilgi " +
@@ -72,7 +63,9 @@ namespace OTOMASYON_SISTEMI.Forms
                 con.Close();
             }
         }
-        ////Kategoriye göre veri getirme işlemlerini fonksiyon ile çağırıyoruz.
+        //Kategoriye göre veri getirme işlemlerini fonksiyon ile çağırıyoruz.
+
+        //
         private void btniçecek_Click(object sender, EventArgs e)
         {
             Function.stokktgrgetir(lviewstok, btniçecek);
@@ -108,5 +101,7 @@ namespace OTOMASYON_SISTEMI.Forms
             Function.stokktgrgetir(lviewstok, btnarasck);
         }
         //Buraya kadar kategori işlemlerini yazıyoruz.
+
+        //
     }
 }

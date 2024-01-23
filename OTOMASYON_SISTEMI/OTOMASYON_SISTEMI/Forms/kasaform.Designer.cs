@@ -28,57 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            kasadurumu = new ListBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             kasaveritablo = new DataGridView();
             panel1 = new Panel();
             kasatplm = new Label();
             label2 = new Label();
             label1 = new Label();
+            panel2 = new Panel();
+            refreshbtn = new Button();
+            lviewkasa = new ListView();
+            columnHeader1 = new ColumnHeader();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)kasaveritablo).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // kasadurumu
-            // 
-            kasadurumu.BackColor = Color.Silver;
-            kasadurumu.BorderStyle = BorderStyle.None;
-            kasadurumu.Cursor = Cursors.Cross;
-            kasadurumu.Dock = DockStyle.Right;
-            kasadurumu.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            kasadurumu.FormattingEnabled = true;
-            kasadurumu.ItemHeight = 17;
-            kasadurumu.Location = new Point(600, 0);
-            kasadurumu.Name = "kasadurumu";
-            kasadurumu.Size = new Size(236, 428);
-            kasadurumu.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.0021572F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.9956779F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.0021572F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.8786259F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.8448753F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.2764969F));
             tableLayoutPanel1.Controls.Add(kasaveritablo, 1, 1);
             tableLayoutPanel1.Controls.Add(panel1, 1, 0);
+            tableLayoutPanel1.Controls.Add(panel2, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(600, 428);
+            tableLayoutPanel1.Size = new Size(836, 428);
             tableLayoutPanel1.TabIndex = 1;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // kasaveritablo
             // 
             kasaveritablo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             kasaveritablo.Dock = DockStyle.Fill;
-            kasaveritablo.Location = new Point(141, 217);
+            kasaveritablo.Location = new Point(177, 217);
             kasaveritablo.Name = "kasaveritablo";
-            kasaveritablo.Size = new Size(317, 208);
+            kasaveritablo.Size = new Size(444, 208);
             kasaveritablo.TabIndex = 0;
             // 
             // panel1
@@ -87,55 +77,94 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(141, 3);
+            panel1.Location = new Point(177, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(317, 208);
+            panel1.Size = new Size(444, 208);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // kasatplm
             // 
             kasatplm.Anchor = AnchorStyles.None;
             kasatplm.AutoSize = true;
             kasatplm.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            kasatplm.Location = new Point(3, 140);
+            kasatplm.Location = new Point(67, 140);
             kasatplm.Name = "kasatplm";
             kasatplm.Size = new Size(148, 32);
             kasatplm.TabIndex = 2;
             kasatplm.Text = "Toplam= TL";
-            kasatplm.Click += label3_Click;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 20F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 162);
-            label2.Location = new Point(69, 87);
+            label2.Location = new Point(133, 87);
             label2.Name = "label2";
             label2.Size = new Size(182, 37);
             label2.TabIndex = 1;
             label2.Text = "Kasa Durumu";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(80, 50);
+            label1.Location = new Point(144, 50);
             label1.Name = "label1";
             label1.Size = new Size(157, 37);
             label1.TabIndex = 0;
             label1.Text = "FastenPOS";
-            label1.Click += label1_Click_1;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(refreshbtn);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(3, 217);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(168, 208);
+            panel2.TabIndex = 2;
+            // 
+            // refreshbtn
+            // 
+            refreshbtn.Anchor = AnchorStyles.None;
+            refreshbtn.BackgroundImage = Properties.Resources.refreshicon;
+            refreshbtn.BackgroundImageLayout = ImageLayout.Stretch;
+            refreshbtn.FlatStyle = FlatStyle.Flat;
+            refreshbtn.Location = new Point(43, 67);
+            refreshbtn.Name = "refreshbtn";
+            refreshbtn.Size = new Size(78, 79);
+            refreshbtn.TabIndex = 0;
+            refreshbtn.UseVisualStyleBackColor = true;
+            refreshbtn.Click += refreshbtn_Click;
+            // 
+            // lviewkasa
+            // 
+            lviewkasa.BackColor = Color.Silver;
+            lviewkasa.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
+            lviewkasa.Cursor = Cursors.Cross;
+            lviewkasa.Dock = DockStyle.Right;
+            lviewkasa.Font = new Font("Segoe UI Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lviewkasa.FullRowSelect = true;
+            lviewkasa.GridLines = true;
+            lviewkasa.Location = new Point(636, 0);
+            lviewkasa.Name = "lviewkasa";
+            lviewkasa.Size = new Size(200, 428);
+            lviewkasa.TabIndex = 2;
+            lviewkasa.UseCompatibleStateImageBehavior = false;
+            lviewkasa.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "KASANIN SON DURUMU";
+            columnHeader1.Width = 200;
             // 
             // kasaform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(836, 428);
+            Controls.Add(lviewkasa);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(kasadurumu);
             Name = "kasaform";
             Text = "kasaform";
             Load += kasaform_Load;
@@ -143,17 +172,20 @@
             ((System.ComponentModel.ISupportInitialize)kasaveritablo).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox kasadurumu;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView kasaveritablo;
         private Panel panel1;
         private Label label1;
         private Label label2;
         private Label kasatplm;
+        private ListView lviewkasa;
+        private ColumnHeader columnHeader1;
+        private Panel panel2;
+        private Button refreshbtn;
     }
 }

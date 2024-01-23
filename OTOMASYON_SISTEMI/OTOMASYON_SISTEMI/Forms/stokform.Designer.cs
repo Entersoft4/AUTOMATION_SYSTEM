@@ -110,7 +110,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(406, 164);
             panel3.TabIndex = 1;
-            panel3.Paint += panel3_Paint;
             // 
             // label2
             // 
@@ -185,7 +184,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 415);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint_1;
             // 
             // groupBox1
             // 

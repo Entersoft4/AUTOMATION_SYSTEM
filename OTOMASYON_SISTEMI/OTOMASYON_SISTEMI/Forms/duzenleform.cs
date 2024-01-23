@@ -16,26 +16,13 @@ namespace OTOMASYON_SISTEMI.Forms
 {
     public partial class duzenleform : Form
     {
-        SqlConnection con;
-        SqlDataReader rdr;
-        SqlCommand cmd;
         baglan join = new baglan();
         public duzenleform()
         {
             InitializeComponent();
             SqlConnection con = new SqlConnection(join.constring);
-            cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand();
         }
-        //isim değişkenlerimizi tanımlıyoruz.
-        public static string masaisim;
-        public static string masakpst;
-        public static string calisanisim;
-        public static string calisansoyisim;
-        public static string calisanunvan;
-        public static string calisantelno;
-        public static string urunisim;
-        public static string urunkpst;
-        public static string urunucret;
 
         private void duzenleform_Load(object sender, EventArgs e)
         {
@@ -43,46 +30,6 @@ namespace OTOMASYON_SISTEMI.Forms
             Function.tablogetir("masa", masatbl);
             Function.tablogetir("calisan", calisantbl);
             Function.tablogetir("urun", uruntbl);
-            //form load olduğunda tbox textlerini public içine alıyoruz.
-            masaisim = misimtbox.Text;
-            masakpst = mkpstbox.Text;
-            calisanisim = cisimtbox.Text;
-            calisansoyisim = csoyadtbox.Text;
-            calisanunvan = cunvantbox.Text;
-            calisantelno = cteltbox.Text;
-            urunisim = uisimtbox.Text;
-            urunkpst = uktgrtbox.Text;
-            urunucret = ucretbox.Text;
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MASA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CALISAN_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void meklebtn_Click(object sender, EventArgs e)
@@ -190,7 +137,9 @@ namespace OTOMASYON_SISTEMI.Forms
         private void mgunceltbox_Click(object sender, EventArgs e)
         {
             //veri güncelleme için seçili satırın bilgisini aldıktan sonra
-            //ilgili tbox ların textlerine eşitleyerek gümcelliyoruz.
+            //ilgili tbox ların textlerine eşitleyerek güncelliyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             foreach (DataGridViewRow drow in masatbl.SelectedRows)
             {
                 con.Open();
@@ -212,6 +161,8 @@ namespace OTOMASYON_SISTEMI.Forms
         {
             //veri güncelleme için seçili satırın bilgisini aldıktan sonra
             //ilgili tbox ların textlerine eşitleyerek gümcelliyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             foreach (DataGridViewRow drow in calisantbl.SelectedRows)
             {
                 con.Open();
@@ -237,9 +188,10 @@ namespace OTOMASYON_SISTEMI.Forms
 
         private void ugunceltbox_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(join.constring);
             //veri güncelleme için seçili satırın bilgisini aldıktan sonra
             //ilgili tbox ların textlerine eşitleyerek güncelliyoruz.
+            baglan join = new baglan();
+            SqlConnection con = new SqlConnection(join.constring);
             foreach (DataGridViewRow drow in uruntbl.SelectedRows)
             {
                 con.Open();
