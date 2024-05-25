@@ -1,0 +1,11 @@
+1-bu uygulama da temel olarak hangi işlemler yapılabilir?
+kurye takibi-raporlar-anlık satış takibi-ilk günden hesap takibi-müşteri bilgisi
+2-uygulama da en çok dikkat edilecek nokta?
+kasa stok raporlaması 
+3-uygulamanın içinde görmek istenilen en önemli işlem?
+anlık satış düzenkemeleri
+4-uygulama da şu olmasın denilen özellikler?
+yoğunluk anında sistemin yavaşlaması-birden fazla sipariş gelince ekran donması
+5-bu uygulamadan beklenti nedir? sizin için olmazsa olmaz dediğiniz şey?
+raporlamaları anlık almak-giriş takibi -kasa takibi
+satış ve stok takibi raporlaması
